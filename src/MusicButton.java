@@ -27,21 +27,21 @@ public class MusicButton extends JButton {
 
     public MusicButton(String onIconPath, String offIconPath, String musicFilePath) {
 
-        iconOn = new ImageIcon(onIconPath);
-        iconOff = new ImageIcon(offIconPath);
-        setIcon(iconOff);
-        isMusicOn = false;
-        musicPlayer = new MusicPlayer(musicFilePath);
+        this.iconOn = new ImageIcon(onIconPath);
+        this.iconOff = new ImageIcon(offIconPath);
+        setIcon(this.iconOff);
+        this.isMusicOn = false;
+        this.musicPlayer = new MusicPlayer(musicFilePath);
 
         addActionListener(e -> {
-            if (isMusicOn) {
-                musicPlayer.stop();
-                setIcon(iconOff);
+            if (this.isMusicOn) {
+                this.musicPlayer.stop();
+                setIcon(this.iconOff);
             } else {
-                musicPlayer.play();
-                setIcon(iconOn);
+                this.musicPlayer.play();
+                setIcon(this.iconOn);
             }
-            isMusicOn = !isMusicOn;
+            this.isMusicOn = !this.isMusicOn;
         });
     }
 }

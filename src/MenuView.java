@@ -22,7 +22,7 @@ public class MenuView extends JFrame {
     private Font policeTitre = new Font("Copperplate", Font.BOLD, 75);                                 // Police du titre
     private Font policeSousTitre = new Font("Copperplate", Font.PLAIN, 24);                            // Police du sous-titre
     private Font policeBouton = new Font("Copperplate", Font.BOLD, 24);                                // Police des boutons
-    private String[] boutonTextes = {"Jouer", "Générer une grille", "Résoudre une grille", "Quitter"}; // Textes des boutons
+    private String[] boutonTextes = {"Jouer", "Comment jouer ?","Paramètres", "Quitter"}; // Textes des boutons
     private JLabel[] labels = {new JLabel("Sudoku Solver", SwingConstants.CENTER),                     // Texte du titre
                                new JLabel("Par Moncef & Marco", SwingConstants.CENTER)};               // Texte du sous-titre   
 
@@ -36,20 +36,20 @@ public class MenuView extends JFrame {
         // Création et configuration de la fenêtre
         JFrame fenetre = new JFrame("Sudoku - Menu principal");
         fenetre.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        fenetre.setMinimumSize(tailleFenetre);
-        fenetre.getContentPane().setBackground(couleurFond);
+        fenetre.setMinimumSize(this.tailleFenetre);
+        fenetre.getContentPane().setBackground(this.couleurFond);
         BorderLayout gestionnaireBorderLayout = new BorderLayout();
         fenetre.setLayout(gestionnaireBorderLayout);
 
         // Création et ajout du panneau de titre
         JPanel panneauTitre = new JPanel(new GridLayout(2, 1));
-        panneauTitre.setBackground(couleurFond);
+        panneauTitre.setBackground(this.couleurFond);
 
-        Font[] fonts = {policeTitre, policeSousTitre};
-        for (int i = 0; i < labels.length; i++) {
-            labels[i].setFont(fonts[i]);
-            labels[i].setForeground(couleurTexteTitre);
-            panneauTitre.add(labels[i]);
+        Font[] fonts = {this.policeTitre, this.policeSousTitre};
+        for (int i = 0; i < this.labels.length; i++) {
+            this.labels[i].setFont(fonts[i]);
+            this.labels[i].setForeground(this.couleurTexteTitre);
+            panneauTitre.add(this.labels[i]);
         }
         fenetre.add(panneauTitre, BorderLayout.NORTH);
 
@@ -58,23 +58,23 @@ public class MenuView extends JFrame {
         GridLayout gestionnairePanneauBouton = new GridLayout(boutonTextes.length, 1, 0, 10);
         panneauBouton.setLayout(gestionnairePanneauBouton);
         panneauBouton.setBorder(BorderFactory.createEmptyBorder(20, 20, 20, 20));
-        panneauBouton.setBackground(couleurFond);
+        panneauBouton.setBackground(this.couleurFond);
         Button[] boutons = new Button[boutonTextes.length];
         for (int i = 0; i < boutons.length; i++) {
-            boutons[i] = new Button(boutonTextes[i], tailleBouton, policeBouton, couleurFond);
+            boutons[i] = new Button(this.boutonTextes[i], this.tailleBouton, this.policeBouton, this.couleurFond);
             panneauBouton.add(boutons[i]);
         }
         fenetre.add(panneauBouton, BorderLayout.WEST);
 
         // Ajout de l'image "sudoku.png"
-        JLabel imageLabel = new JLabel(imageSudoku);
+        JLabel imageLabel = new JLabel(this.imageSudoku);
         fenetre.add(imageLabel, BorderLayout.EAST);
 
         // Ajout du bouton de contrôle de la musique
-        MusicButton musicButton = new MusicButton(scheminIconAudio, scheminIconAudioMuted, scheminMusique);
+        MusicButton musicButton = new MusicButton(this.scheminIconAudio, this.scheminIconAudioMuted, this.scheminMusique);
         FlowLayout gestionnaireControlPanel = new FlowLayout(FlowLayout.RIGHT);
         JPanel controlPanel = new JPanel(gestionnaireControlPanel);
-        controlPanel.setBackground(couleurFond);
+        controlPanel.setBackground(this.couleurFond);
         controlPanel.add(musicButton);
         fenetre.add(controlPanel, BorderLayout.SOUTH);
 

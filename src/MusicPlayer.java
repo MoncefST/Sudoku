@@ -21,8 +21,8 @@ public class MusicPlayer {
         try {
             File file = new File(filePath);
             AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(file);
-            clip = AudioSystem.getClip();
-            clip.open(audioInputStream);
+            this.clip = AudioSystem.getClip();
+            this.clip.open(audioInputStream);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -32,9 +32,9 @@ public class MusicPlayer {
     * Starts playing the music.
     */
     public void play() {
-        if (clip != null && !isPlaying) {
-            clip.start();
-            isPlaying = true;
+        if (this.clip != null && !this.isPlaying) {
+            this.clip.start();
+            this.isPlaying = true;
         }
     }
 
@@ -42,9 +42,9 @@ public class MusicPlayer {
     * Stops the music.
     */
     public void stop() {
-        if (clip != null && isPlaying) {
-            clip.stop();
-            isPlaying = false;
+        if (this.clip != null && this.isPlaying) {
+            this.clip.stop();
+            this.isPlaying = false;
         }
     }
 
@@ -54,6 +54,6 @@ public class MusicPlayer {
      * @return true if the music is playing, false otherwise.
      */
     public boolean isPlaying() {
-        return isPlaying;
+        return this.isPlaying;
     }
 }
