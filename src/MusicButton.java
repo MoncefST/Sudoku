@@ -24,7 +24,6 @@ public class MusicButton extends JButton {
     * @param offIconPath  The file path for the icon when music is off.
     * @param musicFilePath The file path for the music file to be played.
     */
-
     public MusicButton(String onIconPath, String offIconPath, String musicFilePath) {
 
         this.iconOn = new ImageIcon(onIconPath);
