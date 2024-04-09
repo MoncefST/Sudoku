@@ -27,13 +27,13 @@ class ButtonClickListener implements ActionListener {
         String buttonText = ((Button) e.getSource()).getText();
         switch (buttonText) {
             case "Jouer":
-                System.out.println("JOUER"); // À SUPPRIMER APRÈS DEBUG
+                System.out.println("JOUER PRESSER"); // À SUPPRIMER APRÈS DEBUG
                 break;
-            case "Comment jouer ?":
+            case "Règles":
                 RulesDialogManager.showRulesDialog(); // Ouvre une fenêtre de dialogue avec les règles
                 break;
-            case "Paramètres":
-                // Code pour les paramètres
+            case "Comment jouer ?":
+                HowToPlayDialogManager.showHowToPlayDialog();
                 break;
             case "Quitter":
                 System.exit(0); // Quitter le programme

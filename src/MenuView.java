@@ -1,18 +1,19 @@
 import javax.swing.*;
 import java.awt.*;
 
+
 public class MenuView {
 
-    private static final String AUDIO_ON = "../img/iconeAudio.png";                                     // Chemin vers l'image iconeAudio
-    private static final String AUDIO_OFF = "../img/iconeAudioMuted.png";                               // Chemin vers l'image iconeAudioMuted
-    private static final String MUSIC_FILE = "../audio/musiqueDeFond.wav";                              // Chemin vers la musique de fond
+    private static final String AUDIO_ON = "img/iconeAudio.png";                                     // Chemin vers l'image iconeAudio
+    private static final String AUDIO_OFF = "img/iconeAudioMuted.png";                               // Chemin vers l'image iconeAudioMuted
+    private static final String MUSIC_FILE = "audio/musiqueDeFond.wav";                              // Chemin vers la musique de fond
     private static final Dimension BUTTON_SIZE = new Dimension(300, 60);                                // Dimension des boutons
     private static final Color BACKGROUND_COLOR = new Color(54, 91, 109);                               // Couleur de l'arrière plan
     private static final Color TITLE_TEXT_COLOR = Color.WHITE;                                          // Couleur du titre
     private static final Font TITLE_FONT = new Font("Copperplate", Font.BOLD, 75);                      // Police des titres
     private static final Font SUBTITLE_FONT = new Font("Copperplate", Font.PLAIN, 24);                  // Police des sous-titres
     private static final Font BUTTON_FONT = new Font("Copperplate", Font.BOLD, 24);                     // Police des boutons
-    private static final String[] BUTTON_TEXTS = {"Jouer", "Comment jouer ?", "Paramètres", "Quitter"}; // Texte des boutons
+    private static final String[] BUTTON_TEXTS = {"Jouer", "Règles", "Comment jouer ?", "Quitter"};     // Texte des boutons
     private static final JLabel[] labels = {
         new JLabel("Sudoku Solver", SwingConstants.CENTER),                                             // Titre
         new JLabel("Par Moncef & Marco", SwingConstants.CENTER)};                                       // Sous Titre
@@ -24,7 +25,7 @@ public class MenuView {
         this.window = window;
         JPanel titlePanel = createTitlePanel();
         JPanel buttonPanel = createButtonPanel();
-        ImageIcon iconeSudoku = new ImageIcon("../img/sudoku.png");
+        ImageIcon iconeSudoku = new ImageIcon("img/sudoku.png");
         JLabel imageLabel = new JLabel(iconeSudoku);
 
         BorderLayout gestionnaireFenetre = new BorderLayout();
