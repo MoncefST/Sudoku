@@ -3,19 +3,24 @@ import java.awt.event.ActionListener;
 import java.awt.BorderLayout;
 import javax.swing.JOptionPane;
 
+
 /**
  * Listener for button clicks in the menu.
  * It performs different actions based on the button clicked.
  */
-class ButtonClickListener implements ActionListener {
+class HomeButtonClickListener implements ActionListener {
     private Window window;
+    private DialogManager rulesDialogManager;
+    private DialogManager howToPlayDialogManager;
 
     /**
      * Constructs a ButtonClickListener with the specified window.
      * @param window The window where the actions will be performed.
      */
-    public ButtonClickListener(Window window) {
+    public HomeButtonClickListener(Window window) {
         this.window = window;
+        this.rulesDialogManager = new RulesDialogManager();
+        this.howToPlayDialogManager = new HowToPlayDialogManager();
     }
 
     /**
@@ -27,13 +32,13 @@ class ButtonClickListener implements ActionListener {
         String buttonText = ((Button) e.getSource()).getText();
         switch (buttonText) {
             case "Jouer":
-                System.out.println("JOUER PRESSER"); // À SUPPRIMER APRÈS DEBUG
+                // à faire
                 break;
             case "Règles":
-                RulesDialogManager.showRulesDialog(); // Ouvre une fenêtre de dialogue avec les règles
+                rulesDialogManager.showDialog(); 
                 break;
             case "Comment jouer ?":
-                HowToPlayDialogManager.showHowToPlayDialog();
+                howToPlayDialogManager.showDialog(); 
                 break;
             case "Quitter":
                 System.exit(0); // Quitter le programme
@@ -42,5 +47,4 @@ class ButtonClickListener implements ActionListener {
                 break;
         }
     }
-
 }

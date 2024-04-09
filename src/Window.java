@@ -44,4 +44,12 @@ public class Window extends JFrame {
         this.PAGE_TITLE = title;
         this.setTitle(this.PAGE_TITLE + " - " + Window.PROGRAM_TITLE);
     }
+
+    public void changeMenu(JPanel menuPanel) {
+        getContentPane().removeAll();
+        getContentPane().add(menuPanel);
+        revalidate();
+        repaint();
+    }
+
 }
