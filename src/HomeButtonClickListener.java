@@ -1,7 +1,6 @@
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.BorderLayout;
-import javax.swing.JOptionPane;
+
 
 
 /**
@@ -32,7 +31,8 @@ class HomeButtonClickListener implements ActionListener {
         String buttonText = ((Button) e.getSource()).getText();
         switch (buttonText) {
             case "Jouer":
-                // à faire
+                PlayMenuView playMenu = new PlayMenuView(window);
+                window.changeMenu(playMenu);
                 break;
             case "Règles":
                 rulesDialogManager.showDialog(); 

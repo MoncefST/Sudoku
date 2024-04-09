@@ -23,7 +23,7 @@ public class Window extends JFrame {
     public Window() {
         super(PROGRAM_TITLE);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        this.setMinimumSize(this.MIN_WINDOW_SIZE);
+        this.setMinimumSize(MIN_WINDOW_SIZE);
         this.setLocationRelativeTo(null);
         getContentPane().setBackground(new Color(54, 91, 109));
     }

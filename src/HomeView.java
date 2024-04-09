@@ -14,24 +14,32 @@ public class HomeView extends JPanel {
     private final Font BUTTON_FONT = new Font("Copperplate", Font.BOLD, 24);
     private final String[] BUTTON_TEXTS = {"Jouer", "Règles", "Comment jouer ?", "Quitter"};
     private final Title[] labels = {
-        new Title("Sudoku Solver", TITLE_FONT, TITLE_TEXT_COLOR),
-        new Title("Par Moncef & Marco", SUBTITLE_FONT, TITLE_TEXT_COLOR)
-        };
-    private final MusicButton musicButton;
-    private Window window;
+            new Title("Sudoku Solver", TITLE_FONT, TITLE_TEXT_COLOR),
+            new Title("Par Moncef & Marco", SUBTITLE_FONT, TITLE_TEXT_COLOR)
+    };
+    private MusicButton musicButton;
+    private final Window window;
+    private JPanel titlePanel;
+    private JPanel buttonPanel;
+    private JLabel imageLabel;
 
     public HomeView(Window window) {
         this.window = window;
-        JPanel titlePanel = new JPanel();
-        JPanel buttonPanel = new JPanel();
+        createComponents();
+        addComponentsToWindow();
+    }
+
+    private void createComponents() {
+        titlePanel = new JPanel();
+        buttonPanel = new JPanel();
         ImageIcon iconeSudoku = new ImageIcon("img/sudoku.png");
-        JLabel imageLabel = new JLabel(iconeSudoku);
+        imageLabel = new JLabel(iconeSudoku);
 
         GridLayout titleLayout = new GridLayout(2, 1);
         titlePanel.setLayout(titleLayout);
         titlePanel.setBackground(BACKGROUND_COLOR);
         // Utilisation de la classe Title pour le titre et le sous-titre
-        for(Title label : labels){
+        for (Title label : labels) {
             titlePanel.add(label);
         }
 
@@ -47,22 +55,31 @@ public class HomeView extends JPanel {
             buttonPanel.add(button);
         }
 
-        BorderLayout layout = new BorderLayout();
-        this.window.getContentPane().setLayout(layout);
-        this.window.add(titlePanel, BorderLayout.NORTH);
-        this.window.add(buttonPanel, BorderLayout.WEST);
-        this.window.add(imageLabel, BorderLayout.EAST);
-        this.window.setPageTitle("Menu");
+        musicButton = new MusicButton(AUDIO_ON, AUDIO_OFF, MUSIC_FILE);
+    }
 
-        this.musicButton = new MusicButton(AUDIO_ON, AUDIO_OFF, MUSIC_FILE);
+    public void addComponentsToWindow() {
+        BorderLayout layout = new BorderLayout();
+        window.getContentPane().setLayout(layout);
+        window.add(titlePanel, BorderLayout.NORTH);
+        window.add(buttonPanel, BorderLayout.WEST);
+        window.add(imageLabel, BorderLayout.EAST);
+        window.setPageTitle("Menu");
+
         FlowLayout controlPanelLayout = new FlowLayout(FlowLayout.RIGHT);
         JPanel controlPanel = new JPanel(controlPanelLayout);
         controlPanel.setBackground(BACKGROUND_COLOR);
-        controlPanel.add(this.musicButton);
-        this.window.add(controlPanel, BorderLayout.SOUTH);
+        controlPanel.add(musicButton);
+        window.add(controlPanel, BorderLayout.SOUTH);
 
-        this.window.pack();
-        this.window.setLocationRelativeTo(null);
-        this.window.setVisible(true);
+        window.pack();
+        window.setLocationRelativeTo(null);
+        window.setVisible(true);
+    }
+
+    public void removeAllComponents() {
+        window.getContentPane().removeAll();
+        window.revalidate();
+        window.repaint();
     }
 }

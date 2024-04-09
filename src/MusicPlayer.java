@@ -14,7 +14,6 @@ public class MusicPlayer {
 
     /**
     * Constructs a MusicPlayer with the specified file path.
-    * 
     * @param filePath The path to the music file to be played.
     */
     public MusicPlayer(String filePath) {
@@ -50,7 +49,6 @@ public class MusicPlayer {
 
     /**
      * Checks if the music is currently playing.
-     *
      * @return true if the music is playing, false otherwise.
      */
     public boolean isPlaying() {
