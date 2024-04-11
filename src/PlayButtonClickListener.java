@@ -15,9 +15,13 @@ public class PlayButtonClickListener implements ActionListener {
 
         // Handle different button actions based on their text
         if (buttonText.equals("Générer une grille")) {
-            System.out.println("Générer une grille");
+            Grille nouvelleGrille = new Grille();
+            SudokuGenerator sudokuGenerator = new SudokuGenerator(nouvelleGrille);
+            Grille grilleGeneree = sudokuGenerator.genererGrille(); // Générer la grille
+            FileManager.sauvegarderGrille(grilleGeneree);
         } else if (buttonText.equals("Charger une grille")) {
-            System.out.println("Chargement de la grille");
+            Grille grille = FileManager.chargerGrille();
+            GrilleView test = new GrilleView(grille);
         } else if (buttonText.equals("Retour au menu principal")) {
             if (window.getContentPane().getComponent(0) instanceof PlayMenuView) {
                 PlayMenuView playMenuView = (PlayMenuView) window.getContentPane().getComponent(0);

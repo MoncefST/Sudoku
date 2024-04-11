@@ -1,8 +1,6 @@
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-
-
 /**
  * Listener for button clicks in the menu.
  * It performs different actions based on the button clicked.
