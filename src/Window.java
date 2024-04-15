@@ -51,5 +51,4 @@ public class Window extends JFrame {
         revalidate();
         repaint();
     }
-
 }

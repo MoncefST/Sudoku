@@ -76,10 +76,4 @@ public class HomeView extends JPanel {
         window.setLocationRelativeTo(null);
         window.setVisible(true);
     }
-
-    public void removeAllComponents() {
-        window.getContentPane().removeAll();
-        window.revalidate();
-        window.repaint();
-    }
 }

@@ -9,7 +9,7 @@ public class PlayMenuView extends JPanel {
     private final Color TITLE_TEXT_COLOR = Color.WHITE;
     private final Font TITLE_FONT = new Font("Copperplate", Font.BOLD, 40);
     private final Font BUTTON_FONT = new Font("Copperplate", Font.BOLD, 24);
-    private final String[] BUTTON_TEXTS = {"Générer une grille", "Charger une grille"};
+    private final String[] BUTTON_TEXTS = {"Jouer sans grille", "Générer une grille", "Charger une grille"};
     private Title titleLabel;
     private Button[] playModeButtons;
     private Button returnButton;
@@ -37,7 +37,8 @@ public class PlayMenuView extends JPanel {
         for (int i = 0; i < BUTTON_TEXTS.length; i++) {
             Button button = new Button(BUTTON_TEXTS[i], BUTTON_SIZE, BUTTON_FONT, BACKGROUND_COLOR);
             playModeButtons[i] = button;
-            button.addActionListener(new PlayButtonClickListener(window));
+            PlayButtonClickListener ecouteurBouton = new PlayButtonClickListener(window);
+            button.addActionListener(ecouteurBouton);
             buttonPanel.add(button);
         }
 

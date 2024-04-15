@@ -6,6 +6,10 @@ import java.io.FileWriter;
 import java.io.FileReader;
 import java.io.IOException;
 
+// CODE TEMPORAIRE
+// A AMÉLIORER FORTEMENT !!!!!!
+
+
 /**
  * Classe pour gérer les opérations de sauvegarde et de chargement de grille.
  * @author Moncef STITI
