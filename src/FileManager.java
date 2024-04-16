@@ -61,7 +61,7 @@ public class FileManager {
         fileChooser.setFileFilter(new FileNameExtensionFilter("Fichiers de grille (.gri)", "gri"));
         int userSelection = fileChooser.showOpenDialog(null);
         if (userSelection == JFileChooser.APPROVE_OPTION) {
-            // Obtention du nom de fichier choisi par l'utilisateur
+            // Obtain user-selected file name
             String fileName = fileChooser.getSelectedFile().getAbsolutePath();
             try (BufferedReader reader = new BufferedReader(new FileReader(fileName))) {
                 Grille grid = new Grille();
