@@ -15,16 +15,12 @@ public class PlayButtonClickListener implements ActionListener {
         Button sourceButton = (Button) e.getSource();
         String buttonText = sourceButton.getText();
 
-        if (buttonText.equals("Jouer sans grille")) {
-            
-        }
-
-        else if (buttonText.equals("Générer une grille")) {
+        if (buttonText.equals("Générer une grille")) {
             Window.removeAllComponents(this.window);
-            new GridMakeUserInterfaceView(this.window);
-
-        } else if (buttonText.equals("Charger une grille")) {
-            
+            new GridMakeUserInterfaceView(this.window);   
+        }
+        else if (buttonText.equals("Jouer")) {
+            System.out.println("Bouton jouer presser");
         } else if (buttonText.equals("Retour au menu principal")) {
             if (window.getContentPane().getComponent(0) instanceof PlayMenuView) {
                 Window.removeAllComponents(window);

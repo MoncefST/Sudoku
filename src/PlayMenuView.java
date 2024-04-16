@@ -9,7 +9,7 @@ public class PlayMenuView extends JPanel {
     private final Color TITLE_TEXT_COLOR = Color.WHITE;
     private final Font TITLE_FONT = new Font("Copperplate", Font.BOLD, 40);
     private final Font BUTTON_FONT = new Font("Copperplate", Font.BOLD, 24);
-    private final String[] BUTTON_TEXTS = {"Jouer sans grille", "Générer une grille", "Charger une grille"};
+    private final String[] BUTTON_TEXTS = {"Jouer", "Générer une grille"};
     private Title titleLabel;
     private Button[] playModeButtons;
     private Button returnButton;
