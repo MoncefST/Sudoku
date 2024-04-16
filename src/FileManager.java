@@ -6,6 +6,10 @@ import java.io.FileWriter;
 import java.io.FileReader;
 import java.io.IOException;
 
+// CODE TEMPORAIRE
+// A AMÉLIORER FORTEMENT !!!!!!
+
+
 /**
  * Class to manage grid saving and loading operations.
  * @author Moncef STITI

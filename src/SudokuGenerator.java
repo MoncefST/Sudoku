@@ -1,11 +1,12 @@
 import java.util.Random;
 
 public class SudokuGenerator {
-    private int nombreCasesVides = 40;
+    private int nombreCasesVides;
     private Grille grille;
 
-    public SudokuGenerator(Grille grille) {
+    public SudokuGenerator(Grille grille, int nombreCasesVides) {
         this.grille = grille;
+        this.nombreCasesVides = nombreCasesVides;
     }
 
     public Grille genererGrille() {
@@ -49,8 +50,6 @@ public class SudokuGenerator {
         SudokuSolver solver = new SudokuSolver();
         return solver.resoudreSudoku(grilleTemp);
     }
-
-
 
     // Méthode de remplissage de la grille et remplissage des diagonales...
     private void remplirDiagonales() {
