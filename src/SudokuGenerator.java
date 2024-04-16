@@ -26,7 +26,7 @@ public class SudokuGenerator {
                 continue; // La case est déjà vide, passer à la suivante
             }
 
-            int temp = grille.getValeur(row, col);
+            int temp = grille.getValue(row, col);
             grille.vider_case(row, col);
             // Vérifier s'il existe une seule solution après avoir vidé la case
             if (aUneSeuleSolution()) {
@@ -43,7 +43,7 @@ public class SudokuGenerator {
         Grille grilleTemp = new Grille();
         for (int i = 0; i < 9; i++) {
             for (int j = 0; j < 9; j++) {
-                grilleTemp.remplir_case(i, j, grille.getValeur(i, j));
+                grilleTemp.remplir_case(i, j, grille.getValue(i, j));
             }
         }
         SudokuSolver solver = new SudokuSolver();

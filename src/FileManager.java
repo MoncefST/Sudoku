@@ -7,7 +7,7 @@ import java.io.FileReader;
 import java.io.IOException;
 
 /**
- * Classe pour gérer les opérations de sauvegarde et de chargement de grille.
+ * Class to manage grid saving and loading operations.
  * @author Moncef STITI
  * @author Marco ORFAO
  * @version 1.0
@@ -15,27 +15,27 @@ import java.io.IOException;
 public class FileManager {
 
     /**
-     * Méthode pour sauvegarder une grille dans un fichier.
-     * @param grille La grille à sauvegarder
+     * Method to save a grid in a file.
+     * @param grille The grid to save
      */
-    public static void sauvegarderGrille(Grille grille) {
-        // Création d'un sélecteur de fichier
+    public static void saveGrille(Grille grille) {
+        // Creating a file selector
         JFileChooser fileChooser = new JFileChooser();
         fileChooser.setDialogTitle("Enregistrer la grille");
         fileChooser.setFileFilter(new FileNameExtensionFilter("Fichiers de grille (.gri)", "gri"));
         int userSelection = fileChooser.showSaveDialog(null);
         if (userSelection == JFileChooser.APPROVE_OPTION) {
-            // Obtention du nom de fichier choisi par l'utilisateur
-            String nomFichier = fileChooser.getSelectedFile().getAbsolutePath();
-            // Vérification et ajout de l'extension .gri si nécessaire
-            if (!nomFichier.endsWith(".gri")) {
-                nomFichier += ".gri";
+            // Obtain user-selected file name
+            String fileName = fileChooser.getSelectedFile().getAbsolutePath();
+            // Check and add .gri extension if necessary
+            if (!fileName.endsWith(".gri")) {
+                fileName += ".gri";
             }
-            try (BufferedWriter writer = new BufferedWriter(new FileWriter(nomFichier))) {
-                // Écriture des valeurs de la grille dans le fichier
+            try (BufferedWriter writer = new BufferedWriter(new FileWriter(fileName))) {
+                // Writing grid values to file.
                 for (int i = 0; i < 9; i++) {
                     for (int j = 0; j < 9; j++) {
-                        int valeur = grille.getValeur(i, j);
+                        int valeur = grille.getValue(i, j);
                         writer.write(valeur == 0 ? "0" : String.valueOf(valeur));
                     }
                     writer.newLine();
@@ -58,8 +58,8 @@ public class FileManager {
         int userSelection = fileChooser.showOpenDialog(null);
         if (userSelection == JFileChooser.APPROVE_OPTION) {
             // Obtention du nom de fichier choisi par l'utilisateur
-            String nomFichier = fileChooser.getSelectedFile().getAbsolutePath();
-            try (BufferedReader reader = new BufferedReader(new FileReader(nomFichier))) {
+            String fileName = fileChooser.getSelectedFile().getAbsolutePath();
+            try (BufferedReader reader = new BufferedReader(new FileReader(fileName))) {
                 Grille grille = new Grille();
                 String ligne;
                 int row = 0;

@@ -18,7 +18,7 @@ public class PlayButtonClickListener implements ActionListener {
             Grille nouvelleGrille = new Grille();
             SudokuGenerator sudokuGenerator = new SudokuGenerator(nouvelleGrille);
             Grille grilleGeneree = sudokuGenerator.genererGrille(); // Générer la grille
-            FileManager.sauvegarderGrille(grilleGeneree);
+            FileManager.saveGrille(grilleGeneree);
         } else if (buttonText.equals("Charger une grille")) {
             Grille grille = FileManager.chargerGrille();
             GrilleView test = new GrilleView(grille);

@@ -45,7 +45,7 @@ public class Grille {
         grille[row][col] = 0;
     }
 
-    public int getValeur(int row, int col) {
+    public int getValue(int row, int col) {
         return grille[row][col];
     }
 }
