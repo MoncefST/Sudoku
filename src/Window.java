@@ -51,4 +51,10 @@ public class Window extends JFrame {
         revalidate();
         repaint();
     }
+
+    public static void removeAllComponents(Window window) {
+        window.getContentPane().removeAll();
+        window.revalidate();
+        window.repaint();
+    }
 }

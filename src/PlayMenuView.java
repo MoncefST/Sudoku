@@ -50,6 +50,7 @@ public class PlayMenuView extends JPanel {
     // Method to add components to the window
     private void addComponentsToWindow(Window window) {
         // Layout
+        window.setPageTitle("Menu jouer");
         setLayout(new BorderLayout());
         setBackground(BACKGROUND_COLOR);
 
@@ -61,12 +62,5 @@ public class PlayMenuView extends JPanel {
 
         // Add panel to the window
         window.add(this);
-    }
-
-    // Method to remove all components from the window
-    public void removeAllComponents(Window window) {
-        window.remove(this);
-        window.revalidate();
-        window.repaint();
     }
 }

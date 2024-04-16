@@ -64,7 +64,7 @@ public class HomeView extends JPanel {
         window.add(titlePanel, BorderLayout.NORTH);
         window.add(buttonPanel, BorderLayout.WEST);
         window.add(imageLabel, BorderLayout.EAST);
-        window.setPageTitle("Menu");
+        window.setPageTitle("Menu principal");
 
         FlowLayout controlPanelLayout = new FlowLayout(FlowLayout.RIGHT);
         JPanel controlPanel = new JPanel(controlPanelLayout);

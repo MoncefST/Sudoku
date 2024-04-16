@@ -2,11 +2,13 @@ import javax.swing.*;
 import java.awt.*;
 
 public class RulesSudoku extends JPanel {
+    private Dimension FRAME_SIZE = new Dimension(400, 500);
+    private Color BACKGROUND_COLOR = new Color(54, 91, 109);
     
     public RulesSudoku() {
         BorderLayout gestionnaireBorderLayout = new BorderLayout();
         this.setLayout(gestionnaireBorderLayout);
-        this.setBackground(new Color(54, 91, 109)); // Couleur d'arrière-plan du menu principal
+        this.setBackground(this.BACKGROUND_COLOR); // Couleur d'arrière-plan du menu principal
 
         JLabel titleLabel = new JLabel("Règles du Sudoku");
         titleLabel.setFont(new Font("Copperplate", Font.BOLD, 40)); // Police du titre
@@ -23,13 +25,13 @@ public class RulesSudoku extends JPanel {
         rulesTextArea.setWrapStyleWord(true);
         rulesTextArea.setFont(new Font("Arial", Font.PLAIN, 20)); // Police du texte des règles
         rulesTextArea.setForeground(Color.WHITE); // Couleur du texte des règles
-        rulesTextArea.setBackground(new Color(54, 91, 109)); // Couleur d'arrière-plan du texte des règles
+        rulesTextArea.setBackground(this.BACKGROUND_COLOR); // Couleur d'arrière-plan du texte des règles
 
         JScrollPane scrollPane = new JScrollPane(rulesTextArea);
 
         this.add(titleLabel, BorderLayout.NORTH);
         this.add(scrollPane, BorderLayout.CENTER);
 
-        this.setPreferredSize(new Dimension(400, 500)); // Taille de la fenêtre des règles
+        this.setPreferredSize(this.FRAME_SIZE); // Taille de la fenêtre des règles
     }
 }
