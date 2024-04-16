@@ -19,10 +19,10 @@ import java.io.IOException;
 public class FileManager {
 
     /**
-     * Method to save a grid in a file.
-     * @param grille The grid to save
+     * Method for save a grid in a file.
+     * @param grid The grid to save
      */
-    public static void saveGrille(Grille grille) {
+    public static void savegrid(Grille grid) {
         // Creating a file selector
         JFileChooser fileChooser = new JFileChooser();
         fileChooser.setDialogTitle("Enregistrer la grille");
@@ -39,8 +39,8 @@ public class FileManager {
                 // Writing grid values to file.
                 for (int i = 0; i < 9; i++) {
                     for (int j = 0; j < 9; j++) {
-                        int valeur = grille.getValue(i, j);
-                        writer.write(valeur == 0 ? "0" : String.valueOf(valeur));
+                        int value = grid.getValue(i, j);
+                        writer.write(value == 0 ? "0" : String.valueOf(value));
                     }
                     writer.newLine();
                 }
@@ -51,11 +51,11 @@ public class FileManager {
     }
 
     /**
-     * Méthode pour charger une grille à partir d'un fichier.
-     * @return La grille chargée depuis le fichier
+     * Method for loading a grid from a file.
+     * @return The grid loaded from the file.
      */
-    public static Grille chargerGrille() {
-        // Création d'un sélecteur de fichier
+    public static Grille loadGrid() {
+        // Creating a file selector
         JFileChooser fileChooser = new JFileChooser();
         fileChooser.setDialogTitle("Charger une grille");
         fileChooser.setFileFilter(new FileNameExtensionFilter("Fichiers de grille (.gri)", "gri"));
@@ -64,7 +64,7 @@ public class FileManager {
             // Obtention du nom de fichier choisi par l'utilisateur
             String fileName = fileChooser.getSelectedFile().getAbsolutePath();
             try (BufferedReader reader = new BufferedReader(new FileReader(fileName))) {
-                Grille grille = new Grille();
+                Grille grid = new Grille();
                 String ligne;
                 int row = 0;
                 // Lecture des lignes du fichier et remplissage de la grille
@@ -72,13 +72,13 @@ public class FileManager {
                     for (int col = 0; col < 9 && col < ligne.length(); col++) {
                         char caractere = ligne.charAt(col);
                         if (caractere != ' ') {
-                            int valeur = Character.getNumericValue(caractere);
-                            grille.remplir_case(row, col, valeur);
+                            int value = Character.getNumericValue(caractere);
+                            grid.remplir_case(row, col, value);
                         }
                     }
                     row++;
                 }
-                return grille;
+                return grid;
             } catch (IOException e) {
                 e.printStackTrace();
             }

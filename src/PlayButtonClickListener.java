@@ -49,7 +49,7 @@ public class PlayButtonClickListener implements ActionListener {
                 // L'utilisateur a annulé la saisie ou fermé la fenêtre de dialogue, traitement en conséquence
             }
         } else if (buttonText.equals("Charger une grille")) {
-            Grille grille = FileManager.chargerGrille();
+            Grille grille = FileManager.loadGrid();
             GrilleView grilleView = new GrilleView(grille, window);
             window.changeMenu(grilleView);
 
