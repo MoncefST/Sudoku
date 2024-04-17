@@ -2,7 +2,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 /**
- * La classe GridMakerResetGrid ... à compléter
+ * La classe GridMakerResetGrid sert à crée une nouvelle grille de 0.
  *
  * @version 1.0
  * @author Moncef STITI

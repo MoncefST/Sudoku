@@ -2,7 +2,7 @@ import javax.swing.*;
 import java.awt.*;
 
 /**
- * Class containing custom settings for JButtons used in the application.
+ * Class containing custom settings for JButtons.
  * @version 1.0
  * @author Moncef STITI
  * @author Marco ORFAO

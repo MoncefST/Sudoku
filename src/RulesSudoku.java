@@ -1,14 +1,25 @@
 import javax.swing.*;
 import java.awt.*;
 
+/**
+ * RulesSudoku représente le panneau affichant les règles du Sudoku.
+ * Cette classe étend JPanel et définit le contenu des règles.
+ * @version 1.0
+ * @author Moncef STITI
+ * @author Marco ORFAO
+ */
 public class RulesSudoku extends JPanel {
-    private Dimension FRAME_SIZE = new Dimension(400, 500);
-    private Color BACKGROUND_COLOR = new Color(54, 91, 109);
-    
+    private Dimension FRAME_SIZE = new Dimension(400, 500); // Taille de la fenêtre des règles
+    private Color BACKGROUND_COLOR = new Color(54, 91, 109); // Couleur d'arrière-plan du panneau
+
+    /**
+     * Constructeur par défaut de RulesSudoku.
+     * Initialise le contenu des règles et configure l'apparence du panneau.
+     */
     public RulesSudoku() {
         BorderLayout gestionnaireBorderLayout = new BorderLayout();
         this.setLayout(gestionnaireBorderLayout);
-        this.setBackground(this.BACKGROUND_COLOR); // Couleur d'arrière-plan du menu principal
+        this.setBackground(this.BACKGROUND_COLOR); // Couleur d'arrière-plan du panneau
 
         JLabel titleLabel = new JLabel("Règles du Sudoku");
         titleLabel.setFont(new Font("Copperplate", Font.BOLD, 40)); // Police du titre
@@ -35,3 +46,4 @@ public class RulesSudoku extends JPanel {
         this.setPreferredSize(this.FRAME_SIZE); // Taille de la fenêtre des règles
     }
 }
+
