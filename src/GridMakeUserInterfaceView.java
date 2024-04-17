@@ -36,7 +36,7 @@ public class GridMakeUserInterfaceView  {
     // Ajout du menu "Jouer"
     JMenu menuJouer = createMenu("Quitter");
     // Création de l'élément de menu "Retour"
-    JMenuItem retourMenu = createMenuItem("Menu jouer",null);
+    JMenuItem retourMenu = createMenuItem("Menu principal",new GridMakeUserInterfaceController(window));
     // Ajout de l'élément "Retour" au menu "Jouer"
     menuJouer.add(retourMenu);
     // Ajout du menu "Jouer" à la barre de menu

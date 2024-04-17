@@ -16,7 +16,11 @@ public class GridMakerHowToCreateView extends JPanel {
     private Color TITLE_COLOR = new Color(255, 255, 255);
     private Font TITLE_FONT = new Font("Copperplate", Font.BOLD, 40);
 
-    private String TEXT = "Comment créer une grille :\n\n 1. EXPLICATION \n\n 2. EXPLICATION\n\n 3. EXPLICATION.\n\n 4. EXPLICATION";
+    private String TEXT = "1. Cliquez sur le menu 'Grille'.\n" +
+                          "2. Sélectionnez l'option 'Nouveau'.\n" +
+                          "3. Entrez les valeurs pour chaque cellule de la grille. (Entrez 0 si vous souhaitez supprimer une valeur de la grille)\n" +
+                          "4. Cliquez sur 'Sauvegarder' pour enregistrer votre grille.\n\n" +
+                          "Vous pouvez également charger une grille existante en sélectionnant 'Charger' depuis le menu 'Fichier'.";
     private Color TEXT_COLOR = new Color(255, 255, 255);
     private Font TEXT_FONT = new Font("Arial", Font.PLAIN, 20);
 

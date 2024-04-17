@@ -2,6 +2,8 @@ import javax.swing.*;
 import java.awt.*;
 import javax.swing.border.EmptyBorder;
 import java.awt.Color;
+import javax.swing.border.Border;
+
 
 
 /**
@@ -53,19 +55,25 @@ public class GridMakerGrid extends JPanel {
                 int zoneCol = j / 3;
                 gridCases[i][j] = new GridMakerCase();
                 zones[zoneRow][zoneCol].add(gridCases[i][j]);
-
-                // Add borders to cells based on their position in the grid
-                if ((i + 1) % 3 == 0 && (j + 1) % 3 == 0) {
-                    gridCases[i][j].setBorder(BorderFactory.createMatteBorder(1, 1, 5, 5, Color.BLACK));
-                } else if ((i + 1) % 3 == 0) {
-                    gridCases[i][j].setBorder(BorderFactory.createMatteBorder(1, 1, 5, 1, Color.BLACK));
-                } else if ((j + 1) % 3 == 0) {
-                    gridCases[i][j].setBorder(BorderFactory.createMatteBorder(1, 1, 1, 5, Color.BLACK));
-                } else {
-                    gridCases[i][j].setBorder(BorderFactory.createMatteBorder(1, 1, 1, 1, Color.BLACK));
-                }
+                gridCases[i][j].setBorder(determineBorder(i, j)); // Utilisation de la fonction pour définir les bordures
             }
         }
+    }
+
+    /**
+     * Détermine les bordures à appliquer à une cellule de la grille en fonction de ses coordonnées.
+     * Les cellules des coins et des bords ont des bordures plus épaisses.
+     *
+     * @param i L'indice de ligne de la cellule.
+     * @param j L'indice de colonne de la cellule.
+     * @return La bordure à appliquer à la cellule.
+     */
+    private Border determineBorder(int i, int j) {
+        int top = (i == 0) ? 5 : 1; // Bordure supérieure plus épaisse pour la première ligne
+        int bottom = ((i + 1) % 3 == 0) ? 5 : 1; // Bordure inférieure plus épaisse pour chaque troisième ligne
+        int left = (j == 0) ? 5 : 1; // Bordure gauche plus épaisse pour la première colonne
+        int right = ((j + 1) % 3 == 0) ? 5 : 1; // Bordure droite plus épaisse pour chaque troisième colonne
+        return BorderFactory.createMatteBorder(top, left, bottom, right, Color.BLACK); // Crée et retourne la bordure
     }
     
     /**
