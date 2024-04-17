@@ -4,11 +4,13 @@ import java.awt.event.ActionListener;
 /**
  * Listener for button clicks in the menu.
  * It performs different actions based on the button clicked.
+ * @version 1.0
+ * @author Moncef STITI
+ * @author Marco ORFAO
  */
 class HomeButtonClickListener implements ActionListener {
     private Window window;
     private DialogManager rulesDialogManager;
-    private DialogManager howToPlayDialogManager;
 
     /**
      * Constructs a ButtonClickListener with the specified window.
@@ -17,7 +19,6 @@ class HomeButtonClickListener implements ActionListener {
     public HomeButtonClickListener(Window window) {
         this.window = window;
         this.rulesDialogManager = new RulesDialogManager();
-        this.howToPlayDialogManager = new HowToPlayDialogManager();
     }
 
     /**
@@ -29,14 +30,14 @@ class HomeButtonClickListener implements ActionListener {
         String buttonText = ((Button) e.getSource()).getText();
         switch (buttonText) {
             case "Jouer":
-                PlayMenuView playMenu = new PlayMenuView(window);
-                window.changeMenu(playMenu);
+                System.out.println("Bouton jouer cliquer"); // lancer jeu
+                break;
+            case "Générer une grille":
+                Window.removeAllComponents(this.window); // Supprimer tout ce qu'il y a sur la fenêtre
+                new GridMakeUserInterfaceView(this.window); // Lancer le créateur de grille 
                 break;
             case "Règles":
-                rulesDialogManager.showDialog(); 
-                break;
-            case "Comment jouer ?":
-                howToPlayDialogManager.showDialog(); 
+                rulesDialogManager.showDialog(); // Afficher les règles
                 break;
             case "Quitter":
                 System.exit(0); // Quitter le programme
