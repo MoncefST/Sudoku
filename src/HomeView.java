@@ -98,7 +98,6 @@ public class HomeView extends JPanel {
         window.add(controlPanel, BorderLayout.SOUTH); // Ajoute le panneau de contrôles à la fenêtre
 
         window.pack(); // Ajuste la taille de la fenêtre pour s'adapter à son contenu
-        window.setLocationRelativeTo(null); // Centre la fenêtre sur l'écran
         window.setVisible(true); // Rend la fenêtre visible
     }
 }
