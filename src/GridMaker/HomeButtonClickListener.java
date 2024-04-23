@@ -29,12 +29,9 @@ class HomeButtonClickListener implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         String buttonText = ((Button) e.getSource()).getText();
         switch (buttonText) {
-            case "Jouer":
-                System.out.println("Bouton jouer cliquer"); // lancer jeu
-                break;
             case "Générer une grille":
-                Window.removeAllComponents(this.window); // Supprimer tout ce qu'il y a sur la fenêtre
-                new GridMakeUserInterfaceView(this.window); // Lancer le créateur de grille 
+                Window.removeAllComponents(this.window);
+                GridMakeUserInterfaceView vueCreationGrille = new GridMakeUserInterfaceView(this.window); // Lancer le créateur de grille 
                 break;
             case "Règles":
                 rulesDialogManager.showDialog(); // Afficher les règles

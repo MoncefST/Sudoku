@@ -22,11 +22,11 @@ public class HomeView extends JPanel {
     private final Font TITLE_FONT = new Font("Copperplate", Font.BOLD, 75);
     private final Font SUBTITLE_FONT = new Font("Copperplate", Font.PLAIN, 24);
     private final Font BUTTON_FONT = new Font("Copperplate", Font.BOLD, 24);
-    private final String[] BUTTON_TEXTS = {"Jouer", "Générer une grille", "Règles", "Quitter"};
+    private final String[] BUTTON_TEXTS = {"Générer une grille", "Règles", "Quitter"};
 
     // Tableau de titres pour le titre principal et le sous-titre
     private final Title[] labels = {
-            new Title("Sudoku Solver", TITLE_FONT, TITLE_TEXT_COLOR),
+            new Title("Sudoku Grid Creator", TITLE_FONT, TITLE_TEXT_COLOR),
             new Title("Par Moncef & Marco", SUBTITLE_FONT, TITLE_TEXT_COLOR)
     };
 

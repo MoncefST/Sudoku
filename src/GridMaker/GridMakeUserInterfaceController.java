@@ -10,7 +10,6 @@ public class GridMakeUserInterfaceController implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        Window.removeAllComponents(window);
-        HomeView homeView = new HomeView(window);
+        System.exit(0);
     }
 }

@@ -59,17 +59,6 @@ public class Window extends JFrame {
     }
 
     /**
-     * Change le contenu de la fenêtre pour afficher un nouveau panneau.
-     * @param menuPanel Le nouveau panneau à afficher.
-     */
-    public void changeMenu(JPanel menuPanel) {
-        getContentPane().removeAll(); // Supprime tous les composants actuels de la fenêtre
-        getContentPane().add(menuPanel); // Ajoute le nouveau panneau
-        revalidate(); // Revalide la disposition des composants
-        repaint(); // Redessine la fenêtre
-    }
-
-    /**
      * Supprime tous les composants de la fenêtre.
      * Utilisé pour effacer le contenu de la fenêtre.
      * @param window La fenêtre à nettoyer.
