@@ -110,10 +110,8 @@ public class GridMakerGrid extends JPanel {
             for (int j = 0; j < 9; j++) {
                 temp.append(gridCases[i][j].getCellValue());
             }
-
             exportedGrid[i] = Integer.parseInt(temp.toString());
         }
-
         return exportedGrid;
     }
 
