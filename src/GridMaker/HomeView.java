@@ -72,7 +72,7 @@ public class HomeView extends JPanel {
         buttonPanel.setBackground(BACKGROUND_COLOR);
         HomeButtonClickListener listenerButton = new HomeButtonClickListener(window);
         for (String text : BUTTON_TEXTS) {
-            Button button = new Button(text, BUTTON_SIZE, BUTTON_FONT, BACKGROUND_COLOR);
+            Button button = new Button(text, BUTTON_SIZE, BUTTON_FONT, Color.white);
             button.addActionListener(listenerButton);
             buttonPanel.add(button);
         }

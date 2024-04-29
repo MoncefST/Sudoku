@@ -18,6 +18,17 @@ public class Button extends JButton {
         setFont(new Font("Arial", Font.BOLD, 15));
         setBackground(new Color(96, 175, 255));
     }
+    
+    /**
+    * Constructor
+    * @param text The text of the button
+    * @param color The background color of the button
+    */
+    public Button (String text,Color color) {
+        super(text);
+        setFont(new Font("Arial", Font.BOLD, 15));
+        setBackground(color);
+    }
 
     /**
      * Constructor

@@ -43,10 +43,10 @@ public class GSMenu {
         this.buttonPanel.setBackground(new Color(54, 91, 109));
 
         // Création des boutons
-        this.importerButton = new Button("Charger une grille");
-        this.jouerButton = new Button("Jouer");
+        this.importerButton = new Button("Charger une grille",Color.white);
+        this.jouerButton = new Button("Jouer",Color.white);
         this.jouerButton.setEnabled(false); // Le bouton "Jouer" est désactivé par défaut
-        this.autoSolveButton = new Button("Résolution automatique");
+        this.autoSolveButton = new Button("Résolution automatique",Color.white);
         this.autoSolveButton.setEnabled(false); // Le bouton "Résolution automatique" est désactivé par défaut
 
         // Ajout des boutons au panneau de boutons
