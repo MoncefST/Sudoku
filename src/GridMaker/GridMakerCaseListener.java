@@ -3,6 +3,9 @@ import java.awt.event.KeyListener;
 
 /**
  * GridMakerCaseListener est un KeyListener utilisé pour écouter les événements de touche dans GridMakerCase.
+ * @version 1.0
+ * @author Moncef STITI
+ * @author Marco ORFAO
  */
 public class GridMakerCaseListener implements KeyListener {
 

@@ -13,7 +13,7 @@ JCFLAGS := -encoding UTF-8 -implicit:none
 JVM := java
 JVMFLAGS :=
 
-SRCDIR := ./src/GridSolver
+SRCDIR := ./src/GridMaker
 OUTDIR := ./out
 DOCDIR := ./doc
 SRC := $(wildcard $(SRCDIR)/*.java)

@@ -25,7 +25,7 @@ public class GSPlay {
 
     private Container content;
     private GSGrid ma_Grille;
-    private Button boutonValider = new Button("Valider");
+    private Button boutonValider = new Button("Valider",Color.white);
     private long startTime;
     private long vraiTime;
     private Window gameplay;
