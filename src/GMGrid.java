@@ -4,8 +4,6 @@ import javax.swing.border.EmptyBorder;
 import java.awt.Color;
 import javax.swing.border.Border;
 
-
-
 /**
  * A custom JPanel class representing a Sudoku grid.
  * @version 1.0
@@ -63,7 +61,6 @@ public class GMGrid extends JPanel {
     /**
      * Détermine les bordures à appliquer à une cellule de la grille en fonction de ses coordonnées.
      * Les cellules des coins et des bords ont des bordures plus épaisses.
-     *
      * @param i L'indice de ligne de la cellule.
      * @param j L'indice de colonne de la cellule.
      * @return La bordure à appliquer à la cellule.
@@ -78,7 +75,6 @@ public class GMGrid extends JPanel {
     
     /**
      * Imports values to populate the Sudoku grid.
-     *
      * @param values An array of integers representing the Sudoku grid values.
      */
     public void importGrid(int[] values) {

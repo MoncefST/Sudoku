@@ -8,6 +8,7 @@ Ce projet vise à créer un programme en Java pour la résolution de grilles de 
   - [Compilation](#compilation)
   - [Méthode recommandée](#méthode-recommandée)
 - [Comment jouer ?](#comment-jouer)
+- [Générer la documentation](#générer-la-documentation)
 - [Suppression des fichiers](#suppression-des-fichiers)
 - [Crédits](#crédits)
 
@@ -19,21 +20,33 @@ Le Sudoku est un jeu de logique consistant à remplir une grille de 9x9 cases di
 ## Lancement du programme
 ### Compilation
 
-Utiliser la commande suivante pour compiler le programme :
+Utiliser la commande suivante pour compiler :
 ```bash
 make
 ```
-#### Méthode n°1 : Compiler et lancer le programme avec Make
-Utiliser la commande suivante pour compiler puis lancer le programme :
+
+### Lancement du créateur de grille
+
+Utiliser la commande suivante pour lancer le créateur de grille :
 ```bash
-make run
+make GridMaker
+```
+### Lancement du solveur de grille
+
+Utiliser la commande suivante pour lancer le solveur de grille :
+```bash
+make GridSolveur
 ```
 
-## Comment jouer ?
-- SOON
+## Générer la documentation
+```bash
+make doc
+```
 
-## Suppression des fichiers
-- SOON
+## Suppression des fichiers .class et de la documentation
+```bash
+make clean
+```
 
 
 ## Crédits 🚀
