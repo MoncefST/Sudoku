@@ -5,12 +5,23 @@ import java.awt.Container;
 import java.awt.BorderLayout;
 import java.awt.event.ActionListener;
 
-
+/**
+ * La classe GMUserInterfaceView représente la vue de l'interface utilisateur pour le créateur de grille.
+ * Elle crée la barre de menu et initialise les différents composants de l'interface utilisateur.
+ * @version 1.0
+ * @author Moncef STITI
+ * @author Marco ORFAO
+ */
 public class GMUserInterfaceView  {
   private JMenuBar menuBar = new JMenuBar();
   private Container content;
   private GMGrid grid;
 
+  /**
+   * Constructeur de la classe GMUserInterfaceView.
+   * Initialise la fenêtre avec le titre approprié, crée la barre de menu et ajoute les composants à la fenêtre.
+   * @param window La fenêtre de l'application
+   */
   public GMUserInterfaceView(Window window) {
     window.setPageTitle("Créateur de grille");
 
@@ -27,7 +38,7 @@ public class GMUserInterfaceView  {
     // Ajout des éléments de menu
     JMenuItem nouveauItem = createMenuItem("Nouveau", new GMResetGrid(grid));
     JMenuItem chargerItem = createMenuItem("Charger", new GMImport(window, grid));
-    JMenuItem sauvegarderItem = createMenuItem("Sauvegarder", new GMSaver(window, grid));
+    JMenuItem sauvegarderItem = createMenuItem("Sauvegarder", new GMSaverActionListener(window, grid));
     GMChecker checker = new GMChecker(grid); // Créez une instance de GMChecker
     GMCheckerListener checkerListener = new GMCheckerListener(checker); // Créez une instance de GMCheckerListener en passant GMChecker en argument
     JMenuItem verifierItem = createMenuItem("Vérifier", checkerListener);
@@ -64,10 +75,21 @@ public class GMUserInterfaceView  {
     window.setVisible(true);
   }
 
+  /**
+   * Crée un menu avec le titre spécifié.
+   * @param title Le titre du menu
+   * @return Le menu créé
+   */
   private JMenu createMenu(String title) {
     return new JMenu(title);
   }
 
+  /**
+   * Crée un élément de menu avec le titre et le listener spécifiés.
+   * @param title Le titre de l'élément de menu
+   * @param listener Le listener associé à l'élément de menu
+   * @return L'élément de menu créé
+   */
   private JMenuItem createMenuItem(String title, ActionListener listener) {
     JMenuItem item = new JMenuItem(title);
     item.addActionListener(listener);

@@ -1,23 +1,22 @@
 import java.io.*;
 import javax.swing.*;
 import javax.swing.filechooser.FileNameExtensionFilter;
-import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;
+
 
 /**
  * Cette classe implémente un gestionnaire d'enregistrement de grille de jeu.
  * Elle permet à l'utilisateur de sauvegarder une grille de jeu dans un fichier spécifié.
  * Les fichiers de grille sont sauvegardés avec l'extension ".gri".
- * Cette classe écoute les événements d'action déclenchés par un composant d'interface utilisateur.
  * @version 1.0
  * @author Moncef STITI
  * @author Marco ORFAO
  */
-public class GMSaver implements ActionListener {
+public class GMSaver {
 
     private File selectedFile; // Le fichier sélectionné pour sauvegarde
     private JFrame parentFrame; // La fenêtre parent
     private GMGrid grid; // La grille de jeu à sauvegarder
+    private GMChecker testGrille;
 
     /**
      * Constructeur de la classe GMSaver.
@@ -27,15 +26,10 @@ public class GMSaver implements ActionListener {
     public GMSaver(JFrame parentFrame, GMGrid grid) {
         this.parentFrame = parentFrame;
         this.grid = grid;
+        this.testGrille = new GMChecker(this.grid);
     }
 
-    /**
-     * Méthode invoquée lorsqu'un événement d'action est déclenché.
-     * Elle vérifie si la grille est valide, puis la sauvegarde si c'est le cas.
-     * Sinon, elle affiche un message d'erreur.
-     * @param e L'événement d'action déclenché.
-     */
-    public void actionPerformed(ActionEvent e) {
+    public void saveGridIfNeeded() {
         if (isValidGrid()) {
             saveGrid();
         } else {
@@ -48,8 +42,7 @@ public class GMSaver implements ActionListener {
      * @return true si la grille est valide, sinon false.
      */
     private boolean isValidGrid() {
-        GMChecker test = new GMChecker(grid);
-        return test.isCorrect();
+        return this.testGrille.isCorrect();
     }
 
     /**

@@ -2,7 +2,7 @@ import java.io.File;
 import javax.sound.sampled.*;
 
 /**
- * Class containign a simple music player that allows playing and stopping music.
+ * Classe contenant un lecteur de musique simple qui permet de jouer et d'arrêter la musique.
  * @version 1.0
  * @author Moncef STITI
  * @author Marco ORFAO
@@ -13,8 +13,8 @@ public class MusicPlayer {
     private boolean isPlaying;
 
     /**
-    * Constructs a MusicPlayer with the specified file path.
-    * @param filePath The path to the music file to be played.
+    * Construit un MusicPlayer avec le chemin de fichier spécifié.
+    * @param filePath Le chemin du fichier musical à jouer.
     */
     public MusicPlayer(String filePath) {
         try {
@@ -28,7 +28,7 @@ public class MusicPlayer {
     }
 
     /**
-    * Starts playing the music.
+    * Démarre la lecture de la musique.
     */
     public void play() {
         if (this.clip != null && !this.isPlaying) {
@@ -38,7 +38,7 @@ public class MusicPlayer {
     }
 
     /**
-    * Stops the music.
+    * Arrête la lecture de la musique.
     */
     public void stop() {
         if (this.clip != null && this.isPlaying) {
@@ -48,8 +48,8 @@ public class MusicPlayer {
     }
 
     /**
-     * Checks if the music is currently playing.
-     * @return true if the music is playing, false otherwise.
+     * Vérifie si la musique est en train de jouer actuellement.
+     * @return true si la musique est en train de jouer, false sinon.
      */
     public boolean isPlaying() {
         return this.isPlaying;

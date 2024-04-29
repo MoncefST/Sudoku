@@ -1,22 +1,22 @@
 import javax.swing.*;
 
 /**
- * It provides a button that toggles between playing and stopping music when clicked.
+ * Fournit un bouton qui bascule entre la lecture et l'arrêt de la musique lorsqu'il est cliqué.
  * @version 1.0
  * @author Moncef STITI
  * @author Marco ORFAO
  */
- public class MusicButton extends JButton {
+public class MusicButton extends JButton {
     private static MusicPlayer currentMusicPlayer;
     private ImageIcon iconOn;
     private ImageIcon iconOff;
     private MusicPlayer musicPlayer;
 
     /**
-    * Constructs a MusicButton.
-    * @param onIconPath   The file path for the icon when music is on.
-    * @param offIconPath  The file path for the icon when music is off.
-    * @param musicFilePath The file path for the music file to be played.
+    * Constructeur : Construit un MusicButton.
+    * @param onIconPath   Le chemin du fichier d'icône lorsque la musique est activée.
+    * @param offIconPath  Le chemin du fichier d'icône lorsque la musique est désactivée.
+    * @param musicFilePath Le chemin du fichier musical à jouer.
     */
     public MusicButton(String onIconPath, String offIconPath, String musicFilePath) {
 

@@ -2,8 +2,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 /**
- * Listener for button clicks in the menu.
- * It performs different actions based on the button clicked.
+ * Listener pour les clics sur les boutons dans le menu.
+ * Il effectue différentes actions en fonction du bouton cliqué.
  * @version 1.0
  * @author Moncef STITI
  * @author Marco ORFAO
@@ -14,8 +14,8 @@ class GSHomeButtonClickListener implements ActionListener {
     private GSMenu menuJeu;
 
     /**
-     * Constructs a ButtonClickListener with the specified window.
-     * @param window The window where the actions will be performed.
+     * Construit un ButtonClickListener avec la fenêtre spécifiée.
+     * @param window La fenêtre où les actions seront effectuées.
      */
     public GSHomeButtonClickListener(Window window) {
         this.window = window;
@@ -23,8 +23,8 @@ class GSHomeButtonClickListener implements ActionListener {
     }
 
     /**
-     * Performs an action based on the button clicked.
-     * @param e The ActionEvent representing the button click.
+     * Effectue une action en fonction du bouton cliqué.
+     * @param e L'ActionEvent représentant le clic sur le bouton.
      */
     @Override
     public void actionPerformed(ActionEvent e) {

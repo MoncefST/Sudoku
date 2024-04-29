@@ -16,7 +16,7 @@ public class GMHowToCreateView extends JPanel {
     private Color TITLE_COLOR = new Color(255, 255, 255);
     private Font TITLE_FONT = new Font("Copperplate", Font.BOLD, 40);
 
-    private String TEXT = "1. Cliquez sur le menu 'Grille'.\n" +
+    private String TEXT = "1. Cliquez sur le menu 'Fichier'.\n" +
                           "2. Sélectionnez l'option 'Nouveau'.\n" +
                           "3. Entrez les valeurs pour chaque cellule de la grille. (Entrez 0 si vous souhaitez supprimer une valeur de la grille)\n" +
                           "4. Cliquez sur 'Sauvegarder' pour enregistrer votre grille.\n\n" +
