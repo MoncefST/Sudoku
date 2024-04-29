@@ -2,21 +2,29 @@ import java.awt.*;
 import javax.swing.*;
 
 /**
- * GridMakerCase représente une case dans une grille éditable.
- * Cette classe étend JPanel et utilise un GridMakerCaseListener pour gérer les événements de touche.
+ * GMCase représente une case dans une grille éditable.
+ * Cette classe étend JPanel et utilise un GMCaseListener pour gérer les événements de touche.
  * @version 1.0
  * @author Moncef STITI
  * @author Marco ORFAO
  */
 public class GMCase extends JPanel {
-
-    private int cellValue = 0; // Valeur actuelle de la case
-    private String displayText = ""; // Texte à afficher dans la case
-    private JButton actionButton = new JButton(displayText); // Bouton pour afficher le texte
+    /**
+     * Valeur actuelle de la case
+     */
+    private int cellValue = 0;
+    /**
+     * Texte à afficher dans la case
+     * */
+    private String displayText = ""; 
+    /**
+     * Bouton pour afficher le texte
+     */
+    private JButton actionButton = new JButton(displayText);
 
     /**
-     * Constructeur par défaut de GridMakerCase.
-     * Initialise le bouton avec les propriétés nécessaires, crée un GridMakerCaseListener et l'ajoute au bouton.
+     * Constructeur par défaut de GMCase.
+     * Initialise le bouton avec les propriétés nécessaires, crée un GMCaseListener et l'ajoute au bouton.
      */
     public GMCase() {
         actionButton.setOpaque(false);
@@ -30,7 +38,7 @@ public class GMCase extends JPanel {
 
         setPreferredSize(new Dimension(60, 60));
 
-        // Crée un GridMakerCaseListener et l'ajoute au bouton
+        // Crée un GMCaseListener et l'ajoute au bouton
         GMCaseListener listener = new GMCaseListener(this);
         actionButton.addKeyListener(listener);
     }

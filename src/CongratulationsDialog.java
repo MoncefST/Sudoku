@@ -1,7 +1,7 @@
 import javax.swing.JOptionPane;
 
 /**
- * Cette classe permet de crée une boîte de dialogue de félicitations pour afficher le temps de résolution d'un Sudoku.
+ * CongratulationsDialog permet de crée une boîte de dialogue de félicitations pour afficher le temps de résolution d'un Sudoku.
  * @version 1.0
  * @author Moncef STITI
  * @author Marco ORFAO

@@ -5,7 +5,7 @@ JVM := java
 JVMFLAGS :=
 
 SRCDIR := ./src
-OUTDIR := ./out
+OUTDIR := ./build
 DOCDIR := ./doc
 SRC := $(wildcard $(SRCDIR)/*.java)
 OFILES := $(SRC:$(SRCDIR)/%.java=$(OUTDIR)/%.class)
@@ -15,6 +15,7 @@ OFILES := $(SRC:$(SRCDIR)/%.java=$(OUTDIR)/%.class)
 $(OUTDIR)/%.class : $(SRCDIR)/%.java
 	@mkdir -p $(@D)
 	${JC} ${JCFLAGS} -cp $(SRCDIR) -d $(OUTDIR) $<
+
 
 ### REGLES OPTIONNELLES ###
 
@@ -30,6 +31,8 @@ clean :
 
 doc :
 	javadoc -d $(DOCDIR) $(SRC)
+
+default:
 
 ### BUTS FACTICES ###
 
