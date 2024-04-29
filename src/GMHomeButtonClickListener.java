@@ -8,7 +8,7 @@ import java.awt.event.ActionListener;
  * @author Moncef STITI
  * @author Marco ORFAO
  */
-class HomeButtonClickListener implements ActionListener {
+class GMHomeButtonClickListener implements ActionListener {
     private Window window;
     private DialogManager rulesDialogManager;
 
@@ -16,7 +16,7 @@ class HomeButtonClickListener implements ActionListener {
      * Constructs a ButtonClickListener with the specified window.
      * @param window The window where the actions will be performed.
      */
-    public HomeButtonClickListener(Window window) {
+    public GMHomeButtonClickListener(Window window) {
         this.window = window;
         this.rulesDialogManager = new RulesDialogManager();
     }
@@ -31,7 +31,7 @@ class HomeButtonClickListener implements ActionListener {
         switch (buttonText) {
             case "Générer une grille":
                 Window.removeAllComponents(this.window);
-                GridMakeUserInterfaceView vueCreationGrille = new GridMakeUserInterfaceView(this.window); // Lancer le créateur de grille 
+                GMUserInterfaceView vueCreationGrille = new GMUserInterfaceView(this.window); // Lancer le créateur de grille 
                 break;
             case "Règles":
                 rulesDialogManager.showDialog(); // Afficher les règles

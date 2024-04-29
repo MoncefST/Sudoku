@@ -4,26 +4,26 @@ import javax.swing.filechooser.FileNameExtensionFilter;
 import java.io.*;
 
 /**
- * La classe GridMakerImport est utilisée pour importer une grille à partir d'un fichier.
+ * La classe GMImport est utilisée pour importer une grille à partir d'un fichier.
  * Elle implémente l'interface ActionListener pour réagir aux événements de clic sur un bouton.
  * @version 1.0
  * @author Moncef STITI
  * @author Marco ORFAO
  */
-public class GridMakerImport implements ActionListener {
+public class GMImport implements ActionListener {
 
   private JFrame previousFrame;
-  private GridMakerGrid grid;
+  private GMGrid grid;
   private boolean accessible;
   private File file;
   private int[] importedValues = new int[9];
 
   /**
-   * Constructeur pour créer une instance de GridMakerImport.
+   * Constructeur pour créer une instance de GMImport.
    * @param frame La fenêtre précédente
    * @param sudokuGrid La grille Sudoku
    */
-  public GridMakerImport(JFrame frame, GridMakerGrid sudokuGrid) {
+  public GMImport(JFrame frame, GMGrid sudokuGrid) {
     this.previousFrame = frame;
     this.grid = sudokuGrid;
   }

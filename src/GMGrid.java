@@ -12,16 +12,16 @@ import javax.swing.border.Border;
  * @author Moncef STITI
  * @author Marco ORFAO
  */
-public class GridMakerGrid extends JPanel {
+public class GMGrid extends JPanel {
 
     private int[][] gridValues = new int[9][9]; // Stores the values of each cell in the grid
-    private GridMakerCase[][] gridCases = new GridMakerCase[9][9]; // Represents the individual cells in the grid
+    private GMCase[][] gridCases = new GMCase[9][9]; // Represents the individual cells in the grid
     private int[] exportedGrid = new int[9]; // Stores the grid values in an exportable format
 
     /**
-     * Constructs a new GridMakerGrid object and initializes the grid.
+     * Constructs a new GMGrid object and initializes the grid.
      */
-    public GridMakerGrid() {
+    public GMGrid() {
         setupGrid();
         setBackground(new Color(54, 91, 109)); // On change la couleur de fond (les cotés de la grille)
     }
@@ -53,7 +53,7 @@ public class GridMakerGrid extends JPanel {
             for (int j = 0; j < 9; j++) {
                 int zoneRow = i / 3;
                 int zoneCol = j / 3;
-                gridCases[i][j] = new GridMakerCase();
+                gridCases[i][j] = new GMCase();
                 zones[zoneRow][zoneCol].add(gridCases[i][j]);
                 gridCases[i][j].setBorder(determineBorder(i, j)); // Utilisation de la fonction pour définir les bordures
             }

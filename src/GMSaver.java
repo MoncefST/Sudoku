@@ -13,18 +13,18 @@ import java.awt.event.ActionEvent;
  * @author Moncef STITI
  * @author Marco ORFAO
  */
-public class GridMakerSaver implements ActionListener {
+public class GMSaver implements ActionListener {
 
     private File selectedFile; // Le fichier sélectionné pour sauvegarde
     private JFrame parentFrame; // La fenêtre parent
-    private GridMakerGrid grid; // La grille de jeu à sauvegarder
+    private GMGrid grid; // La grille de jeu à sauvegarder
 
     /**
-     * Constructeur de la classe GridMakerSaver.
+     * Constructeur de la classe GMSaver.
      * @param parentFrame La fenêtre parent.
      * @param grid La grille de jeu à sauvegarder.
      */
-    public GridMakerSaver(JFrame parentFrame, GridMakerGrid grid) {
+    public GMSaver(JFrame parentFrame, GMGrid grid) {
         this.parentFrame = parentFrame;
         this.grid = grid;
     }
@@ -48,7 +48,7 @@ public class GridMakerSaver implements ActionListener {
      * @return true si la grille est valide, sinon false.
      */
     private boolean isValidGrid() {
-        GridMakerChecker test = new GridMakerChecker(grid);
+        GMChecker test = new GMChecker(grid);
         return test.isCorrect();
     }
 

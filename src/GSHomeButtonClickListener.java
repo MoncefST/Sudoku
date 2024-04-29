@@ -8,7 +8,7 @@ import java.awt.event.ActionListener;
  * @author Moncef STITI
  * @author Marco ORFAO
  */
-class HomeButtonClickListener implements ActionListener {
+class GSHomeButtonClickListener implements ActionListener {
     private Window window;
     private DialogManager rulesDialogManager;
     private GSMenu menuJeu;
@@ -17,7 +17,7 @@ class HomeButtonClickListener implements ActionListener {
      * Constructs a ButtonClickListener with the specified window.
      * @param window The window where the actions will be performed.
      */
-    public HomeButtonClickListener(Window window) {
+    public GSHomeButtonClickListener(Window window) {
         this.window = window;
         this.rulesDialogManager = new RulesDialogManager();
     }

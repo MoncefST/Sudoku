@@ -10,7 +10,7 @@ import java.awt.*;
  * @author Moncef STITI
  * @author Marco ORFAO
  */
-public class HomeView extends JPanel {
+public class GSHomeView extends JPanel {
 
     // Constantes pour les chemins des icônes et des fichiers audio, ainsi que pour les dimensions et les couleurs
     private final String AUDIO_ON = "img/iconeAudio.png";
@@ -41,7 +41,7 @@ public class HomeView extends JPanel {
      * Initialise la fenêtre parente et crée les composants de la page d'accueil.
      * @param window La fenêtre parente.
      */
-    public HomeView(Window window) {
+    public GSHomeView(Window window) {
         this.window = window;
         createComponents();
         addComponentsToWindow();
@@ -70,7 +70,7 @@ public class HomeView extends JPanel {
         buttonPanel.setLayout(buttonLayout);
         buttonPanel.setBorder(BorderFactory.createEmptyBorder(20, 20, 20, 20));
         buttonPanel.setBackground(BACKGROUND_COLOR);
-        HomeButtonClickListener listenerButton = new HomeButtonClickListener(window);
+        GSHomeButtonClickListener listenerButton = new GSHomeButtonClickListener(window);
         for (String text : BUTTON_TEXTS) {
             Button button = new Button(text, BUTTON_SIZE, BUTTON_FONT, Color.white);
             button.addActionListener(listenerButton);

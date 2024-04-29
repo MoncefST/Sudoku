@@ -1,6 +1,6 @@
-public class Main{
+public class GridMaker{
     public static void main(String[] args) {
         Window fenetre = new Window(); // Création d'une fenêtre
-        HomeView menu = new HomeView(fenetre); // Création du menu sur la fenêtre
+        GMHomeView menu = new GMHomeView(fenetre); // Création du menu sur la fenêtre
     }
 }

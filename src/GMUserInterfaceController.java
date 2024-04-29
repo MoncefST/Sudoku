@@ -1,10 +1,10 @@
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class GridMakeUserInterfaceController implements ActionListener {
+public class GMUserInterfaceController implements ActionListener {
     private Window window;
 
-    public GridMakeUserInterfaceController(Window window) {
+    public GMUserInterfaceController(Window window) {
         this.window = window;
     }
 

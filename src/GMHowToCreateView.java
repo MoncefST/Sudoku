@@ -2,13 +2,13 @@ import javax.swing.*;
 import java.awt.*;
 
 /**
- * La classe GridMakerHowToCreateView est une vue qui affiche les instructions pour créer une grille dans une boîte de dialogue.
+ * La classe GMHowToCreateView est une vue qui affiche les instructions pour créer une grille dans une boîte de dialogue.
  * Elle hérite de JPanel pour servir de composant d'interface utilisateur.
  * @version 1.0
  * @author Moncef STITI
  * @author Marco ORFAO
  */
-public class GridMakerHowToCreateView extends JPanel {
+public class GMHowToCreateView extends JPanel {
     private Dimension FRAME_SIZE = new Dimension(600, 500);
     private Color BACKGROUND_COLOR = new Color(54, 91, 109);
 
@@ -25,10 +25,10 @@ public class GridMakerHowToCreateView extends JPanel {
     private Font TEXT_FONT = new Font("Arial", Font.PLAIN, 20);
 
     /**
-     * Constructeur pour créer une instance de GridMakerHowToCreateView.
+     * Constructeur pour créer une instance de GMHowToCreateView.
      * Initialise les composants de la vue et les dispose selon un BorderLayout.
      */
-    public GridMakerHowToCreateView() {
+    public GMHowToCreateView() {
         BorderLayout borderLayout = new BorderLayout();
         this.setLayout(borderLayout);
         this.setBackground(this.BACKGROUND_COLOR); // Définit la couleur d'arrière-plan du panneau

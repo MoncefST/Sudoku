@@ -1,20 +1,20 @@
 import java.awt.event.*;
 
 /**
- * GridMakerRules gère les actions liées aux règles du jeu.
+ * GMRules gère les actions liées aux règles du jeu.
  * Cette classe implémente ActionListener pour réagir aux clics sur un bouton.
  * @version 1.0
  * @author Moncef STITI
  * @author Marco ORFAO
  */
-public class GridMakerRules implements ActionListener {
+public class GMRules implements ActionListener {
     private RulesDialogManager rulesDialog; // Gestionnaire de la boîte de dialogue des règles
 
     /**
-     * Constructeur de GridMakerRules.
+     * Constructeur de GMRules.
      * Initialise le gestionnaire de boîte de dialogue des règles.
      */
-    public GridMakerRules(){
+    public GMRules(){
         this.rulesDialog = new RulesDialogManager();
     }
 

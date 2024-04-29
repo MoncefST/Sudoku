@@ -6,18 +6,18 @@ import java.awt.BorderLayout;
 import java.awt.event.ActionListener;
 
 
-public class GridMakeUserInterfaceView  {
+public class GMUserInterfaceView  {
   private JMenuBar menuBar = new JMenuBar();
   private Container content;
-  private GridMakerGrid grid;
+  private GMGrid grid;
 
-  public GridMakeUserInterfaceView(Window window) {
+  public GMUserInterfaceView(Window window) {
     window.setPageTitle("Créateur de grille");
 
     content = window.getContentPane();
     BorderLayout gestionnaire = new BorderLayout();
     content.setLayout(gestionnaire);
-    grid = new GridMakerGrid();
+    grid = new GMGrid();
 
     // Création des menus
     JMenu menuFichier = createMenu("Fichier");
@@ -25,20 +25,20 @@ public class GridMakeUserInterfaceView  {
     JMenu menuAide = createMenu("Aide");
 
     // Ajout des éléments de menu
-    JMenuItem nouveauItem = createMenuItem("Nouveau", new GridMakerResetGrid(grid));
-    JMenuItem chargerItem = createMenuItem("Charger", new GridMakerImport(window, grid));
-    JMenuItem sauvegarderItem = createMenuItem("Sauvegarder", new GridMakerSaver(window, grid));
-    GridMakerChecker checker = new GridMakerChecker(grid); // Créez une instance de GridMakerChecker
-    GridMakerCheckerListener checkerListener = new GridMakerCheckerListener(checker); // Créez une instance de GridMakerCheckerListener en passant GridMakerChecker en argument
+    JMenuItem nouveauItem = createMenuItem("Nouveau", new GMResetGrid(grid));
+    JMenuItem chargerItem = createMenuItem("Charger", new GMImport(window, grid));
+    JMenuItem sauvegarderItem = createMenuItem("Sauvegarder", new GMSaver(window, grid));
+    GMChecker checker = new GMChecker(grid); // Créez une instance de GMChecker
+    GMCheckerListener checkerListener = new GMCheckerListener(checker); // Créez une instance de GMCheckerListener en passant GMChecker en argument
     JMenuItem verifierItem = createMenuItem("Vérifier", checkerListener);
-    JMenuItem aideGrilleItem = createMenuItem("Comment créer une grille", new GridMakerHowToCreateController());
-    JMenuItem reglesSudokuItem = createMenuItem("Règles du Sudoku", new GridMakerRules());
+    JMenuItem aideGrilleItem = createMenuItem("Comment créer une grille", new GMHowToCreateController());
+    JMenuItem reglesSudokuItem = createMenuItem("Règles du Sudoku", new GMRules());
 
 
     // Ajout du menu "Jouer"
     JMenu menuJouer = createMenu("Quitter");
     // Création de l'élément de menu "Retour"
-    JMenuItem retourMenu = createMenuItem("Quitter",new GridMakeUserInterfaceController(window));
+    JMenuItem retourMenu = createMenuItem("Quitter",new GMUserInterfaceController(window));
     // Ajout de l'élément "Retour" au menu "Jouer"
     menuJouer.add(retourMenu);
     // Ajout du menu "Jouer" à la barre de menu

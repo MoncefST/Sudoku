@@ -1,21 +1,21 @@
 import java.awt.event.*;
 
 /**
- * La classe GridMakerHowToCreateController est un contrôleur qui gère l'affichage de la fenêtre de création de grille.
+ * La classe GMHowToCreateController est un contrôleur qui gère l'affichage de la fenêtre de création de grille.
  * Elle implémente l'interface ActionListener pour réagir aux événements de clic sur un bouton.
  * @version 1.0
  * @author Moncef STITI
  * @author Marco ORFAO
  */
-public class GridMakerHowToCreateController implements ActionListener {
-    private GridMakerHowToCreateDialogManager howToCreateGrid;
+public class GMHowToCreateController implements ActionListener {
+    private GMHowToCreateDialogManager howToCreateGrid;
 
     /**
-     * Constructeur pour créer une instance de GridMakerHowToCreateController.
+     * Constructeur pour créer une instance de GMHowToCreateController.
      * Initialise le gestionnaire de dialogue pour la création de grille.
      */
-    public GridMakerHowToCreateController(){
-        this.howToCreateGrid = new GridMakerHowToCreateDialogManager();
+    public GMHowToCreateController(){
+        this.howToCreateGrid = new GMHowToCreateDialogManager();
     }
 
     /**

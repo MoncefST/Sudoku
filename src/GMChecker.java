@@ -1,24 +1,24 @@
 import javax.swing.*;
 
 /**
- * La classe GridMakerChecker est utilisée pour vérifier la cohérence de la grille.
+ * La classe GMChecker est utilisée pour vérifier la cohérence de la grille.
  * Elle vérifie si les lignes, les colonnes et les régions de la grille respectent les règles du jeu.
  * @version 1.0
  * @author Moncef STITI
  * @author Marco ORFAO
  */
-public class GridMakerChecker {
+public class GMChecker {
 
-    private GridMakerGrid grid;
-    private GridMakerCheckerListener checkerListener;
+    private GMGrid grid;
+    private GMCheckerListener checkerListener;
 
     /**
-     * Constructeur pour créer une instance de GridMakerChecker.
+     * Constructeur pour créer une instance de GMChecker.
      * @param grid La grille à vérifier
      */
-    public GridMakerChecker(GridMakerGrid grid) {
+    public GMChecker(GMGrid grid) {
         this.grid = grid;
-        this.checkerListener = new GridMakerCheckerListener(this);
+        this.checkerListener = new GMCheckerListener(this);
     }
 
 

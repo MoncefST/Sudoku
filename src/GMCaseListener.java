@@ -7,15 +7,15 @@ import java.awt.event.KeyListener;
  * @author Moncef STITI
  * @author Marco ORFAO
  */
-public class GridMakerCaseListener implements KeyListener {
+public class GMCaseListener implements KeyListener {
 
-    private GridMakerCase gridMakerCase;
+    private GMCase gridMakerCase;
 
     /**
      * Constructeur de GridMakerCaseListener.
      * @param gridMakerCase La case à écouter.
      */
-    public GridMakerCaseListener(GridMakerCase gridMakerCase) {
+    public GMCaseListener(GMCase gridMakerCase) {
         this.gridMakerCase = gridMakerCase;
     }
 

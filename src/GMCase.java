@@ -8,7 +8,7 @@ import javax.swing.*;
  * @author Moncef STITI
  * @author Marco ORFAO
  */
-public class GridMakerCase extends JPanel {
+public class GMCase extends JPanel {
 
     private int cellValue = 0; // Valeur actuelle de la case
     private String displayText = ""; // Texte à afficher dans la case
@@ -18,7 +18,7 @@ public class GridMakerCase extends JPanel {
      * Constructeur par défaut de GridMakerCase.
      * Initialise le bouton avec les propriétés nécessaires, crée un GridMakerCaseListener et l'ajoute au bouton.
      */
-    public GridMakerCase() {
+    public GMCase() {
         actionButton.setOpaque(false);
         actionButton.setContentAreaFilled(false);
         actionButton.setBorderPainted(false);
@@ -31,7 +31,7 @@ public class GridMakerCase extends JPanel {
         setPreferredSize(new Dimension(60, 60));
 
         // Crée un GridMakerCaseListener et l'ajoute au bouton
-        GridMakerCaseListener listener = new GridMakerCaseListener(this);
+        GMCaseListener listener = new GMCaseListener(this);
         actionButton.addKeyListener(listener);
     }
 

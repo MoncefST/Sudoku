@@ -2,25 +2,25 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 /**
- * La classe GridMakerResetGrid sert à crée une nouvelle grille de 0.
+ * La classe GMResetGrid sert à crée une nouvelle grille de 0.
  *
  * @version 1.0
  * @author Moncef STITI
  * @author Marco ORFAO
  */
 
-public class GridMakerResetGrid implements ActionListener {
+public class GMResetGrid implements ActionListener {
 
   /**
    * La grille à réinitialiser.
    */
-  private GridMakerGrid myGrid;
+  private GMGrid myGrid;
 
   /**
-   * Constructeur pour créer une instance de GridMakerResetGrid.
+   * Constructeur pour créer une instance de GMResetGrid.
    * @param grid Grille à réinitialiser
    */
-  public GridMakerResetGrid(GridMakerGrid grid) {
+  public GMResetGrid(GMGrid grid) {
     this.myGrid = grid;
   }
 
