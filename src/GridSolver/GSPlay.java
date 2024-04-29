@@ -25,7 +25,7 @@ public class GSPlay {
 
     private Container content;
     private GSGrid ma_Grille;
-    private Button boutonValider = new Button("Valider",Color.white);
+    private Button boutonValider = new Button("Valider",Color.lightGray);
     private long startTime;
     private long vraiTime;
     private Window gameplay;
@@ -41,7 +41,6 @@ public class GSPlay {
         this.gameplay = window;
         this.gsPlayController = new GSPlayController(this);
     }
-
 
     /**
      * Méthode pour afficher la fenêtre de jeu.
@@ -90,10 +89,18 @@ public class GSPlay {
         return !this.ma_Grille.isComplete();
     }
 
+    /**
+    * Méthode pour obtenir le bouton valider.
+    * @return le bouton valider
+    */
     public Button getBoutonValider() {
         return boutonValider;
     }
 
+    /**
+    * Méthode pour obtenir la grille
+    * @return la grille
+    */
     public GSGrid getMaGrille() {
         return ma_Grille;
     }
