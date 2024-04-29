@@ -1,5 +1,4 @@
 import javax.swing.*;
-import java.awt.event.*;
 
 /**
  * La classe GridMakerChecker est utilisée pour vérifier la cohérence de la grille.
@@ -8,9 +7,10 @@ import java.awt.event.*;
  * @author Moncef STITI
  * @author Marco ORFAO
  */
-public class GridMakerChecker implements ActionListener {
+public class GridMakerChecker {
 
     private GridMakerGrid grid;
+    private GridMakerCheckerListener checkerListener;
 
     /**
      * Constructeur pour créer une instance de GridMakerChecker.
@@ -18,16 +18,9 @@ public class GridMakerChecker implements ActionListener {
      */
     public GridMakerChecker(GridMakerGrid grid) {
         this.grid = grid;
+        this.checkerListener = new GridMakerCheckerListener(this);
     }
 
-    /**
-     * Méthode invoquée lorsqu'un bouton est cliqué.
-     * Lance la vérification de la grille.
-     * @param e L'événement d'action
-     */
-    public void actionPerformed(ActionEvent e) {
-        checkGrid();
-    }
 
     /**
      * Vérifie si la grille est correcte.

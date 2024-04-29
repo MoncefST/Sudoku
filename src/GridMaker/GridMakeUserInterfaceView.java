@@ -28,7 +28,9 @@ public class GridMakeUserInterfaceView  {
     JMenuItem nouveauItem = createMenuItem("Nouveau", new GridMakerResetGrid(grid));
     JMenuItem chargerItem = createMenuItem("Charger", new GridMakerImport(window, grid));
     JMenuItem sauvegarderItem = createMenuItem("Sauvegarder", new GridMakerSaver(window, grid));
-    JMenuItem verifierItem = createMenuItem("Vérifier", new GridMakerChecker(grid));
+    GridMakerChecker checker = new GridMakerChecker(grid); // Créez une instance de GridMakerChecker
+    GridMakerCheckerListener checkerListener = new GridMakerCheckerListener(checker); // Créez une instance de GridMakerCheckerListener en passant GridMakerChecker en argument
+    JMenuItem verifierItem = createMenuItem("Vérifier", checkerListener);
     JMenuItem aideGrilleItem = createMenuItem("Comment créer une grille", new GridMakerHowToCreateController());
     JMenuItem reglesSudokuItem = createMenuItem("Règles du Sudoku", new GridMakerRules());
 

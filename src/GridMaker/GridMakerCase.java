@@ -4,12 +4,12 @@ import javax.swing.*;
 
 /**
  * GridMakerCase représente une case dans une grille éditable.
- * Cette classe étend JPanel et implémente KeyListener pour permettre à l'utilisateur de saisir des valeurs dans la case.
+ * Cette classe étend JPanel et utilise un GridMakerCaseListener pour gérer les événements de touche.
  * @version 1.0
  * @author Moncef STITI
  * @author Marco ORFAO
  */
-public class GridMakerCase extends JPanel implements KeyListener {
+public class GridMakerCase extends JPanel {
 
     private int cellValue = 0; // Valeur actuelle de la case
     private String displayText = ""; // Texte à afficher dans la case
@@ -17,56 +17,23 @@ public class GridMakerCase extends JPanel implements KeyListener {
 
     /**
      * Constructeur par défaut de GridMakerCase.
-     * Initialise le bouton avec les propriétés nécessaires, ajoute un KeyListener et configure le layout.
+     * Initialise le bouton avec les propriétés nécessaires, crée un GridMakerCaseListener et l'ajoute au bouton.
      */
     public GridMakerCase() {
         actionButton.setOpaque(false);
         actionButton.setContentAreaFilled(false);
         actionButton.setBorderPainted(false);
         actionButton.setPreferredSize(new Dimension(50, 50));
-        actionButton.addKeyListener(this); // Ajout du KeyListener au bouton
 
         BorderLayout gestionnaire = new BorderLayout();
         setLayout(gestionnaire);
         add(actionButton, BorderLayout.CENTER);
 
         setPreferredSize(new Dimension(60, 60));
-    }
 
-    /**
-     * Méthode appelée lorsqu'une touche est enfoncée.
-     * Si la touche est un chiffre, met à jour la valeur de la case avec ce chiffre.
-     * @param e L'événement KeyEvent généré lorsque la touche est enfoncée.
-     */
-    @Override
-    public void keyPressed(KeyEvent e) {
-        int keyChar = e.getKeyChar();
-        if (Character.isDigit(keyChar)) {
-            int num = Character.getNumericValue(keyChar);
-            if (num >= 0 && num <= 9) {
-                setCellValue(num);
-            }
-        }
-    }
-
-    /**
-     * Méthode appelée lorsqu'une touche est relâchée.
-     * Aucun traitement n'est nécessaire dans ce cas.
-     * @param e L'événement KeyEvent généré lorsque la touche est relâchée.
-     */
-    @Override
-    public void keyReleased(KeyEvent e) {
-        // Pas de traitement nécessaire
-    }
-
-    /**
-     * Méthode appelée lorsqu'une touche est tapée (enfoncée puis relâchée).
-     * Aucun traitement n'est nécessaire dans ce cas.
-     * @param e L'événement KeyEvent généré lorsque la touche est tapée.
-     */
-    @Override
-    public void keyTyped(KeyEvent e) {
-        // Pas de traitement nécessaire
+        // Crée un GridMakerCaseListener et l'ajoute au bouton
+        GridMakerCaseListener listener = new GridMakerCaseListener(this);
+        actionButton.addKeyListener(listener);
     }
 
     /**
@@ -96,4 +63,3 @@ public class GridMakerCase extends JPanel implements KeyListener {
         return this.cellValue;
     }
 }
-
