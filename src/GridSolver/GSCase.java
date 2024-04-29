@@ -1,51 +1,41 @@
-import java.awt.*;
+import java.awt.Color;
 import javax.swing.JPanel;
 import javax.swing.JLabel;
-import java.awt.event.MouseListener;
-import java.awt.event.MouseEvent;
 
-/**
- * La classe GSCase représente une case individuelle dans une grille de Sudoku.
- */
-public class GSCase extends JPanel implements MouseListener{
+public class GSCase extends JPanel {
+    private int primaryValue;
+    private int secondaryValue = 0;
+    private int tertiaryValue = 0;
+    private int quaternaryValue = 0;
 
-  private int primaryValue; // Valeur principale de la case
-  private int secondaryValue; // Deuxième valeur de la case (utilisée pour les cas spéciaux)
-  private int tertiaryValue; // Troisième valeur de la case (utilisée pour les cas spéciaux)
-  private int quaternaryValue; // Quatrième valeur de la case (utilisée pour les cas spéciaux)
-  private String text = ""; // Texte affiché dans la case
-  private Boolean isInitial = false; // Indique si la valeur de la case est initiale (fournie avec le puzzle)
-  private Boolean isActive; // Indique si la case est active (sélectionnée par l'utilisateur)
-  JLabel label = new JLabel(); // Composant pour afficher le texte dans la case
-  private byte digitCount = 0; // Compte le nombre de valeurs insérées dans la case
-  private int positionX; // Position X de la case dans la grille
-  private int positionY; // Position Y de la case dans la grille
-  private GSGrid parentGrid; // Référence à la grille parente
+    private String text = "";
+    protected boolean isInitial = false;
+    protected boolean isActive;
+    private JLabel label = new JLabel();
+    private byte digitCount = 0;
+    protected int positionX;
+    protected int positionY;
+    protected GSGrid parentGrid;
+    private GSCaseMouseListener mouseListener; // Instance de la classe qui gère les événements de souris
 
-  /**
-   * Constructeur de la classe GSCase.
-   * @param grid La grille parente à laquelle cette case appartient.
-   * @param x Position X de la case dans la grille.
-   * @param y Position Y de la case dans la grille.
-   */
-  public GSCase(GSGrid grid, int x, int y) {
-    this.positionX = x;
-    this.positionY = y;
-    
-    this.primaryValue = 0;
-    this.secondaryValue = 0;
-    this.tertiaryValue = 0;
-    this.quaternaryValue = 0;
-    
-    this.setBackground(Color.white);
-    this.addMouseListener(this);
-    this.parentGrid = grid;
-    this.add(label);
-    deactivateCell();
-    layoutSetup();
-  }
+    public GSCase(GSGrid grid, int x, int y) {
+        this.positionX = x;
+        this.positionY = y;
 
-  /**
+        this.primaryValue = 0;
+
+        this.setBackground(Color.white);
+
+        this.parentGrid = grid;
+        this.add(label);
+        layoutSetup();
+
+        // Initialisation de l'écouteur de souris
+        this.mouseListener = new GSCaseMouseListener(this);
+        this.addMouseListener(this.mouseListener);
+    }
+
+      /**
    * Configure l'apparence initiale de la case.
    */
   public void layoutSetup() {
@@ -80,36 +70,6 @@ public class GSCase extends JPanel implements MouseListener{
    */
   public int getValue(){
     return this.primaryValue;
-  }
-
-  /**
-   * Gère les actions de clic de souris sur la case.
-   */
-  public void mouseClicked(MouseEvent e) {
-    if (!this.isInitial) {
-      this.isActive = true;
-      this.setBackground(Color.GREEN);
-      this.parentGrid.testActivity(this.positionX, this.positionY);
-    }
-  }
-
-  // D'autres méthodes de l'interface MouseListener
-  public void mousePressed(MouseEvent e) {}
-  public void mouseReleased(MouseEvent e) {}
-  public void mouseEntered(MouseEvent e) {
-    if (!isInitial) {
-      if (!isActive) {
-        this.setBackground(Color.yellow);
-      }
-    }
-  }
-
-  public void mouseExited(MouseEvent e) {
-    if (!isInitial) {
-      if (!isActive) {
-        this.setBackground(Color.white);
-      }
-    }
   }
 
   /**
@@ -197,5 +157,4 @@ public class GSCase extends JPanel implements MouseListener{
     this.text = String.valueOf(this.primaryValue);
     layoutSetup();
   }
-  
 }
