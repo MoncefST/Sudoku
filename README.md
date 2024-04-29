@@ -6,10 +6,10 @@ Ce projet vise à créer un programme en Java pour la résolution de grilles de 
 - [Introduction](#introduction)
 - [Lancement du programme](#lancement-du-programme)
   - [Compilation](#compilation)
-  - [Méthode recommandée](#méthode-recommandée)
-- [Comment jouer ?](#comment-jouer)
-- [Générer la documentation](#générer-la-documentation)
+  - [Lancement du créateur de grille](#Lancement-du-créateur-de-grille)
+  - [Lancement du solveur de grille](#Lancement-du-solveur-de-grille)
 - [Suppression des fichiers](#suppression-des-fichiers)
+- [Générer la documentation](#générer-la-documentation)
 - [Crédits](#crédits)
 
 
@@ -38,16 +38,14 @@ Utiliser la commande suivante pour lancer le solveur de grille :
 make GridSolveur
 ```
 
-## Générer la documentation
-```bash
-make doc
-```
-
 ## Suppression des fichiers .class et de la documentation
 ```bash
 make clean
 ```
-
+## Générer la documentation
+```bash
+make doc
+```
 
 ## Crédits 🚀
  -   Programme réalisé par Moncef STITI (@stiti) et Marco ORFAO (@orfao)
