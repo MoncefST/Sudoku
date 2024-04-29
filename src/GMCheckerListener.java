@@ -17,12 +17,12 @@ public class GMCheckerListener implements ActionListener {
     }
 
     /**
-     * Méthode invoquée lorsqu'un bouton est cliqué.
+     * Méthode invoquée lorsque le bouton "Vérifier" est cliqué.
      * Lance la vérification de la grille.
      * @param e L'événement d'action
      */
     @Override
     public void actionPerformed(ActionEvent e) {
-        gridMakerChecker.checkGrid();
+        gridMakerChecker.checkGridMessage();
     }
 }

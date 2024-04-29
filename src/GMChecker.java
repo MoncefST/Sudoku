@@ -23,15 +23,27 @@ public class GMChecker {
 
 
     /**
+     * Vérifie si la grille est correcte et envoie un message.
+     * @return true si la grille est correcte, false sinon
+     */
+    public boolean checkGridMessage() {
+        boolean isGridCorrect = checkGrid();
+        if (isGridCorrect) {
+            showMessage("Grille cohérente !", "Votre grille est cohérente. Aucune erreur n'a été trouvée. Vous pouvez maintenant sauvegarder votre grille !");
+        } else {
+            showMessage("Grille incorrecte !", "Deux mêmes chiffres sont présents dans la même ligne/colonne/région. Veuillez modifier votre grille !");
+        }
+        return isGridCorrect;
+    }
+
+    /**
      * Vérifie si la grille est correcte.
      * @return true si la grille est correcte, false sinon
      */
     public boolean checkGrid() {
         if (checkRows() || checkColumns() || checkRegions()) {
-            showMessage("Grille incorrecte !", "Deux mêmes chiffres sont présents dans la même ligne/colonne/région. Veuillez modifier votre grille !");
             return false;
         } else {
-            showMessage("Grille cohérente !", "Votre grille est cohérente. Aucune erreur n'a été trouvée. Vous pouvez maintenant sauvegarder votre grille !");
             return true;
         }
     }
