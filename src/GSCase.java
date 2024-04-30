@@ -33,15 +33,11 @@ public class GSCase extends JPanel {
     public GSCase(GSGrid grid, int x, int y) {
         this.positionX = x;
         this.positionY = y;
-
         this.primaryValue = 0; // Valeur par défaut
-
         this.setBackground(Color.white); // Couleur de fond par défaut
-
         this.parentGrid = grid;
         this.add(label);
         layoutSetup();
-
         // Initialisation de l'écouteur de souris
         this.mouseListener = new GSCaseMouseListener(this);
         this.addMouseListener(this.mouseListener);

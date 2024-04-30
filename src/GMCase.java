@@ -26,11 +26,19 @@ public class GMCase extends JPanel {
      */
     protected boolean isActive = false;
 
+    private int row;
+    private int col;
+    private GMGrid grille;
+
     /**
      * Constructeur par défaut de GMCase.
      * Initialise le bouton avec les propriétés nécessaires, crée un GMCaseListener et l'ajoute au bouton.
      */
-    public GMCase() {
+    public GMCase(GMGrid grille, int row, int col) {
+        this.grille = grille;
+        this.row = row;
+        this.col = col;
+
         actionButton.setOpaque(false);
         actionButton.setContentAreaFilled(false);
         actionButton.setBorderPainted(false);
@@ -43,7 +51,7 @@ public class GMCase extends JPanel {
         setPreferredSize(new Dimension(60, 60));
 
         // Crée un GMCaseListener et l'ajoute au bouton
-        GMCaseKeyListener listener = new GMCaseKeyListener(this);
+        GMCaseKeyListener listener = new GMCaseKeyListener(this,this.grille,this.row,this.col);
         actionButton.addKeyListener(listener);
 
         GMCaseMouseListener mouseListener = new GMCaseMouseListener();
