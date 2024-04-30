@@ -54,6 +54,7 @@ public class GMGrid extends JPanel {
                 gridCases[i][j] = new GMCase();
                 zones[zoneRow][zoneCol].add(gridCases[i][j]);
                 gridCases[i][j].setBorder(determineBorder(i, j)); // Utilisation de la fonction pour définir les bordures
+                gridCases[i][j].setBackground(Color.WHITE);
             }
         }
     }

@@ -15,12 +15,16 @@ public class GMCase extends JPanel {
     private int cellValue = 0;
     /**
      * Texte à afficher dans la case
-     * */
+     */
     private String displayText = ""; 
     /**
      * Bouton pour afficher le texte
      */
     private JButton actionButton = new JButton(displayText);
+    /**
+     * Statut de la case
+     */
+    protected boolean isActive = false;
 
     /**
      * Constructeur par défaut de GMCase.
@@ -39,8 +43,11 @@ public class GMCase extends JPanel {
         setPreferredSize(new Dimension(60, 60));
 
         // Crée un GMCaseListener et l'ajoute au bouton
-        GMCaseListener listener = new GMCaseListener(this);
+        GMCaseKeyListener listener = new GMCaseKeyListener(this);
         actionButton.addKeyListener(listener);
+
+        GMCaseMouseListener mouseListener = new GMCaseMouseListener();
+        actionButton.addMouseListener(mouseListener);
     }
 
     /**
@@ -68,5 +75,15 @@ public class GMCase extends JPanel {
      */
     public int getCellValue() {
         return this.cellValue;
+    }
+
+    public void setActive(boolean active) {
+        this.isActive = active;
+        if (isActive) {
+            setBackground(Color.CYAN);
+        } else {
+            setBackground(Color.WHITE);
+        }
+        updateDisplay();
     }
 }
