@@ -1,6 +1,7 @@
 import java.awt.Color;
 import javax.swing.JPanel;
 import javax.swing.JLabel;
+import java.awt.Font;
 
 /**
  * GSCase représente une case dans une grille de jeu.
@@ -56,9 +57,12 @@ public class GSCase extends JPanel {
      * Initialise la case avec une valeur initiale.
      */
     public void initializeCell() {
+        Font font = label.getFont();
+        label.setFont(font.deriveFont(font.getSize() + 15f));
+
         label.setText(this.text); 
         this.setBackground(this.isInitial ? Color.lightGray : Color.white); 
-        layoutSetup(); 
+        layoutSetup();
     }
 
     /**
@@ -115,18 +119,18 @@ public class GSCase extends JPanel {
                     } else if (this.digitCount == 1 && value != this.primaryValue) {
                         this.secondaryValue = value;
                         this.digitCount++;
-                        this.text = String.valueOf(this.primaryValue + ", " + this.secondaryValue);
+                        this.text = String.valueOf(this.primaryValue + " " + this.secondaryValue);
                     } else if (this.digitCount == 2 && value != this.primaryValue && value != this.secondaryValue) {
                         this.tertiaryValue = value;
                         this.digitCount++;
-                        this.text = String.valueOf(this.primaryValue + ", " + this.secondaryValue + ", " + this.tertiaryValue);
+                        this.text = String.valueOf(this.primaryValue + " " + this.secondaryValue + " " + this.tertiaryValue);
                     } else if (this.digitCount == 3 && value != this.primaryValue && value != this.secondaryValue && value != this.tertiaryValue) {
                         this.quaternaryValue = value;
                         this.digitCount++;
-                        this.text = String.valueOf(this.primaryValue + ", " + this.secondaryValue + ", " + this.tertiaryValue + ", " + this.quaternaryValue);
+                        this.text = String.valueOf(this.primaryValue + " " + this.secondaryValue + " " + this.tertiaryValue + " " + this.quaternaryValue);
                     }
                 }
-                this.setBackground(Color.WHITE);
+                this.setBackground(Color.PINK);
                 layoutSetup();
             } else if (checkInputValue(value)){
                 this.setBackground(Color.RED);

@@ -39,9 +39,6 @@ public class GMUserInterfaceView  {
     JMenuItem nouveauItem = createMenuItem("Nouveau", new GMResetGrid(grid));
     JMenuItem chargerItem = createMenuItem("Charger", new GMImport(window, grid));
     JMenuItem sauvegarderItem = createMenuItem("Sauvegarder", new GMSaverActionListener(window, grid));
-    GMChecker checker = new GMChecker(grid); // Créez une instance de GMChecker
-    GMCheckerListener checkerListener = new GMCheckerListener(checker); // Créez une instance de GMCheckerListener en passant GMChecker en argument
-    JMenuItem verifierItem = createMenuItem("Vérifier", checkerListener);
     JMenuItem aideGrilleItem = createMenuItem("Comment créer une grille", new GMHowToCreateController());
     JMenuItem reglesSudokuItem = createMenuItem("Règles du Sudoku", new GMRules());
 
@@ -60,7 +57,6 @@ public class GMUserInterfaceView  {
     menuFichier.add(nouveauItem);
     menuFichier.add(chargerItem);
     menuFichier.add(sauvegarderItem);
-    menuGrille.add(verifierItem);
     menuAide.add(aideGrilleItem);
     menuAide.add(reglesSudokuItem);
 

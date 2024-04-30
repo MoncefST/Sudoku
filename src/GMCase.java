@@ -43,6 +43,8 @@ public class GMCase extends JPanel {
         actionButton.setContentAreaFilled(false);
         actionButton.setBorderPainted(false);
         actionButton.setPreferredSize(new Dimension(50, 50));
+        Font buttonFont = actionButton.getFont();
+        actionButton.setFont(new Font(buttonFont.getName(), Font.PLAIN, 60));
 
         BorderLayout gestionnaire = new BorderLayout();
         setLayout(gestionnaire);

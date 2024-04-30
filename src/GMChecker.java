@@ -10,7 +10,6 @@ import javax.swing.*;
 public class GMChecker {
 
     private GMGrid grid;
-    private GMCheckerListener checkerListener;
 
     /**
      * Constructeur pour créer une instance de GMChecker.
@@ -18,7 +17,6 @@ public class GMChecker {
      */
     public GMChecker(GMGrid grid) {
         this.grid = grid;
-        this.checkerListener = new GMCheckerListener(this);
     }
 
 
