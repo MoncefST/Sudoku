@@ -9,19 +9,48 @@ import java.awt.*;
  * @author Marco ORFAO
  */
 public class GMHowToCreateView extends JPanel {
+    /**
+     * La taille de la fenêtre de la boîte de dialogue.
+     */
     private Dimension FRAME_SIZE = new Dimension(600, 500);
+
+    /**
+     * La couleur de fond de la boîte de dialogue.
+     */
     private Color BACKGROUND_COLOR = new Color(54, 91, 109);
 
+    /**
+     * Le titre affiché dans la boîte de dialogue.
+     */
     private String TITLE = "Comment créer une grille";
+
+    /**
+     * La couleur du titre affiché dans la boîte de dialogue.
+     */
     private Color TITLE_COLOR = new Color(255, 255, 255);
+
+    /**
+     * La police du titre affiché dans la boîte de dialogue.
+     */
     private Font TITLE_FONT = new Font("Copperplate", Font.BOLD, 40);
 
+    /**
+     * Le texte des instructions affiché dans la boîte de dialogue.
+     */
     private String TEXT = "1. Cliquez sur le menu 'Fichier'.\n" +
                           "2. Sélectionnez l'option 'Nouveau'.\n" +
                           "3. Entrez les valeurs pour chaque cellule de la grille. (Entrez 0 si vous souhaitez supprimer une valeur de la grille)\n" +
                           "4. Cliquez sur 'Sauvegarder' pour enregistrer votre grille.\n\n" +
                           "Vous pouvez également charger une grille existante en sélectionnant 'Charger' depuis le menu 'Fichier'.";
+
+    /**
+     * La couleur du texte des instructions affiché dans la boîte de dialogue.
+     */
     private Color TEXT_COLOR = new Color(255, 255, 255);
+
+    /**
+     * La police du texte des instructions affiché dans la boîte de dialogue.
+     */
     private Font TEXT_FONT = new Font("Arial", Font.PLAIN, 20);
 
     /**

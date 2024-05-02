@@ -13,8 +13,19 @@ import java.awt.event.ActionListener;
  * @author Marco ORFAO
  */
 public class GMUserInterfaceView  {
+  /**
+   * Barre de menu de l'interface utilisateur.
+   */
   private JMenuBar menuBar = new JMenuBar();
+
+  /**
+   * Contenu de la fenêtre de l'application.
+   */
   private Container content;
+
+  /**
+   * Grille du créateur de grille.
+   */
   private GMGrid grid;
 
   /**

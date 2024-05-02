@@ -26,13 +26,27 @@ public class GMCase extends JPanel {
      */
     protected boolean isActive = false;
 
+    /**
+     * Ligne
+     */
     private int row;
+
+    /**
+     * Colonne
+     */
     private int col;
+
+    /**
+     * Grille
+     */
     private GMGrid grille;
 
     /**
-     * Constructeur par défaut de GMCase.
+     * Constructeur de GMCase.
      * Initialise le bouton avec les propriétés nécessaires, crée un GMCaseListener et l'ajoute au bouton.
+     * @param grille La grille à laquelle la case appartient.
+     * @param row L'indice de ligne de la case.
+     * @param col L'indice de colonne de la case.
      */
     public GMCase(GMGrid grille, int row, int col) {
         this.grille = grille;
@@ -87,6 +101,10 @@ public class GMCase extends JPanel {
         return this.cellValue;
     }
 
+    /**
+     * Définit l'état d'activité de la case et met à jour son apparence en conséquence.
+     * @param active true si la case doit être activée, false sinon.
+     */
     public void setActive(boolean active) {
         this.isActive = active;
         if (isActive) {

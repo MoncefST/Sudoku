@@ -7,7 +7,6 @@ import java.awt.*;
  * @author Moncef STITI
  * @author Marco ORFAO
  */
-
 public class Button extends JButton {
     /**
      * Constructor

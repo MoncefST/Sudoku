@@ -1,11 +1,25 @@
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
-import java.awt.*;
 import javax.swing.*;
 
+/**
+ * GMCaseMouseListener est un écouteur de souris pour les cases de la grille
+ * @version 1.O
+ * @author Moncef STITI
+ * @author Marco ORFAO
+ */
 public class GMCaseMouseListener extends MouseAdapter {
-    // Variable statique pour stocker la dernière case activée
+    /**
+     * Variable statique pour stocker la dernière case activée
+     */
     private static GMCase lastActiveCase;
+
+    /**
+     * Constructeur par défaut de GMCaseMouseListener.
+     */
+    public GMCaseMouseListener() {
+        // Ce constructeur est laissé vide intentionnellement
+    }
 
     @Override
     public void mouseClicked(MouseEvent e) {

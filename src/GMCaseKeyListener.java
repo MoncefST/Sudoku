@@ -9,17 +9,37 @@ import javax.swing.JOptionPane;
  * @author Marco ORFAO
  */
 public class GMCaseKeyListener implements KeyListener {
-
+    /**
+     * Le vérificateur de grille pour vérifier si les règles du Sudoku sont respectées.
+     */
     private GMChecker checker;
+
+    /**
+     * La case GMCase à écouter.
+     */
     private GMCase gridMakerCase;
-    private GMCase gridMakerCaseCopy;
+
+    /**
+     * La grille GMGrid à laquelle la case appartient.
+     */
     private GMGrid grille;
+
+    /**
+     * L'indice de ligne de la case dans la grille.
+     */
     private int row;
+
+    /**
+     * L'indice de colonne de la case dans la grille.
+     */
     private int col;
 
     /**
      * Constructeur de GridMakerCaseListener.
      * @param gridMakerCase La case à écouter.
+     * @param grille La grille à laquelle la case appartient.
+     * @param row L'indice de ligne de la case.
+     * @param col L'indice de colonne de la case.
      */
     public GMCaseKeyListener(GMCase gridMakerCase,GMGrid grille, int row, int col) {
         this.gridMakerCase = gridMakerCase;

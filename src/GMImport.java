@@ -12,10 +12,29 @@ import java.io.*;
  */
 public class GMImport implements ActionListener {
 
+  /**
+   * La fenêtre précédente.
+   */
   private JFrame previousFrame;
+
+  /**
+   * La grille Sudoku.
+   */
   private GMGrid grid;
+
+  /**
+   * Indique si l'importation est accessible.
+   */
   private boolean accessible;
+
+  /**
+   * Le fichier à importer.
+   */
   private File file;
+
+  /**
+   * Les valeurs importées de la grille.
+   */
   private int[] importedValues = new int[9];
 
   /**

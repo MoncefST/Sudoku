@@ -69,7 +69,7 @@ public class GSPlay {
     /**
      * Constructeur de la classe GSPlay.
      * @param grille La grille de Sudoku.
-     * @param frame La fenêtre principale.
+     * @param window La fenêtre principale.
      */
     public GSPlay(Window window, GSGrid grille) {
         this.ma_Grille = grille;

@@ -14,30 +14,94 @@ import java.util.List;
  */
 public class HomeView extends JPanel {
 
-    // Constantes pour les chemins des icônes et des fichiers audio, ainsi que pour les dimensions et les couleurs
+    /**
+     * La chemin pour accéder à l'image "iconeAudio.png"
+     */
     private final String AUDIO_ON = "img/iconeAudio.png";
+
+    /**
+     * La chemin pour accéder à l'image "AudioMuted.png"
+     */
     private final String AUDIO_OFF = "img/iconeAudioMuted.png";
+
+    /**
+     * Le chemin pour accéder à la musique
+     */
     private final String MUSIC_FILE = "audio/musiqueDeFond.wav";
+
+    /**
+     * La taille des boutons
+     */
     private final Dimension BUTTON_SIZE = new Dimension(300, 60);
+
+    /**
+     * La couleur d'arrière plan
+     */
     private final Color BACKGROUND_COLOR = new Color(54, 91, 109);
+
+    /**
+     * La couleur du texte du titre
+     */
     private final Color TITLE_TEXT_COLOR = Color.WHITE;
+
+    /**
+     * La police d'écriture du texte du titre
+     */
     private final Font TITLE_FONT = new Font("Copperplate", Font.BOLD, 75);
+
+    /**
+     * La police d'écriture du sous-titre
+     */
     private final Font SUBTITLE_FONT = new Font("Copperplate", Font.PLAIN, 24);
+
+    /**
+     * La police d'écriture du texte des boutons
+     */
     private final Font BUTTON_FONT = new Font("Copperplate", Font.BOLD, 24);
 
-    private final String[] BUTTON_TEXTS; // Textes des boutons
-    private final Title[] labels; // Tableau de titres pour le titre principal et le sous-titre
-    private MusicButton musicButton; // Bouton pour contrôler la musique
-    private final Window window; // Fenêtre parente
-    private JPanel titlePanel; // Panneau pour le titre
-    private JPanel buttonPanel; // Panneau pour les boutons
-    private JLabel imageLabel; // Étiquette pour l'image
-    private List<Button> buttonsList; // Liste des boutons créés
+    /**
+     * Textes des boutons
+     */
+    private final String[] BUTTON_TEXTS;
+
+    /**
+     * Tableau de titres pour le titre principal et le sous-titre
+     */
+    private final Title[] labels;
+
+    /**
+     * Bouton pour contrôler la musique
+     */
+    private MusicButton musicButton;
+
+    /**
+     * Fenêtre parente
+     */
+    private final Window window;
+
+    /**
+     * Panneau pour le titre
+     */
+    private JPanel titlePanel;
+
+    /**
+     * Panneau pour les boutons
+     */
+    private JPanel buttonPanel;
+
+    /**
+     * Étiquette pour l'image
+     */
+    private JLabel imageLabel;
+
+    /**
+     * Liste des boutons créés
+     */
+    private List<Button> buttonsList;
 
     /**
      * Constructeur de la classe HomeView.
      * Initialise la fenêtre parente et crée les composants de la page d'accueil.
-     *
      * @param window     La fenêtre parente.
      * @param mainTitle  Le titre principal de la page.
      * @param subTitle   Le sous-titre de la page.

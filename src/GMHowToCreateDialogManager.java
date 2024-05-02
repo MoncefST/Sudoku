@@ -11,6 +11,13 @@ import javax.swing.JOptionPane;
 public class GMHowToCreateDialogManager implements DialogManager {
 
     /**
+     * Constructeur par défaut de GMHowToCreateDialogManager.
+     */
+    public GMHowToCreateDialogManager() {
+        // Ce constructeur est laissé vide intentionnellement
+    }
+    
+    /**
      * Méthode pour afficher la boîte de dialogue avec les instructions de création de grille.
      */
     @Override

@@ -33,7 +33,6 @@ public class GSImport {
   /**
    * Constructeur pour créer une instance de GridMakerImport.
    * @param frame La fenêtre précédente
-   * @param sudokuGrid La grille Sudoku
    */
   public GSImport(Window frame) {
     this.previousFrame = frame;

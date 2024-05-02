@@ -8,6 +8,9 @@ import java.awt.event.*;
  * @author Marco ORFAO
  */
 public class GMHowToCreateController implements ActionListener {
+    /**
+     * Le gestionnaire de dialogue pour la création de grille.
+     */
     private GMHowToCreateDialogManager howToCreateGrid;
 
     /**

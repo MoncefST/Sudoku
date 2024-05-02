@@ -10,20 +10,70 @@ import java.awt.Font;
  * @author Marco ORFAO
  */
 public class GSCase extends JPanel {
-    private int primaryValue; // Valeur principale de la case
-    private int secondaryValue = 0; // Deuxième valeur de la case (optionnelle)
-    private int tertiaryValue = 0; // Troisième valeur de la case (optionnelle)
-    private int quaternaryValue = 0; // Quatrième valeur de la case (optionnelle)
+    /**
+     * Valeur principale de la case.
+     */
+    private int primaryValue;
 
-    private String text = ""; // Texte affiché dans la case
-    protected boolean isInitial = false; // Indique si la valeur de la case est initiale
-    protected boolean isActive = true; // Indique si la case est active
-    private JLabel label = new JLabel(); // Étiquette pour afficher le texte
-    private byte digitCount = 0; // Compteur du nombre de valeurs insérées dans la case
-    protected int positionX; // Position X de la case dans la grille
-    protected int positionY; // Position Y de la case dans la grille
-    protected GSGrid parentGrid; // Grille parente de la case
-    private GSCaseMouseListener mouseListener; // Écouteur pour les événements de souris
+    /**
+     * Deuxième valeur de la case (optionnelle).
+     */
+    private int secondaryValue = 0;
+
+    /**
+     * Troisième valeur de la case (optionnelle).
+     */
+    private int tertiaryValue = 0;
+
+    /**
+     * Quatrième valeur de la case (optionnelle).
+     */
+    private int quaternaryValue = 0;
+
+    /**
+     * Texte affiché dans la case.
+     */
+    private String text = "";
+
+    /**
+     * Indique si la valeur de la case est initiale.
+     */
+    protected boolean isInitial = false;
+
+    /**
+     * Indique si la case est active.
+     */
+    protected boolean isActive = true;
+
+    /**
+     * Étiquette pour afficher le texte.
+     */
+    private JLabel label = new JLabel();
+
+    /**
+     * Compteur du nombre de valeurs insérées dans la case.
+     */
+    private byte digitCount = 0;
+
+    /**
+     * Position X de la case dans la grille.
+     */
+    protected int positionX;
+
+    /**
+     * Position Y de la case dans la grille.
+     */
+    protected int positionY;
+
+    /**
+     * Grille parente de la case.
+     */
+    protected GSGrid parentGrid;
+
+    /**
+     * Écouteur pour les événements de souris.
+     */
+    private GSCaseMouseListener mouseListener;
 
     /**
      * Constructeur de la classe GSCase.
@@ -59,9 +109,7 @@ public class GSCase extends JPanel {
     public void initializeCell() {
         Font font = label.getFont();
         label.setFont(font.deriveFont(font.getSize() + 15f));
-
         label.setText(this.text); 
-        this.setBackground(this.isInitial ? Color.lightGray : Color.white); 
         layoutSetup();
     }
 
@@ -130,7 +178,7 @@ public class GSCase extends JPanel {
                         this.text = String.valueOf(this.primaryValue + " " + this.secondaryValue + " " + this.tertiaryValue + " " + this.quaternaryValue);
                     }
                 }
-                this.setBackground(Color.PINK);
+                this.setBackground(Color.CYAN);
                 layoutSetup();
             } else if (checkInputValue(value)){
                 this.setBackground(Color.RED);

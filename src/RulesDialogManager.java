@@ -9,6 +9,13 @@ import javax.swing.JOptionPane;
  */
 public class RulesDialogManager implements DialogManager {
     /**
+     * Constructeur par défaut de RulesDialogManager.
+     */
+    public RulesDialogManager() {
+        // Ce constructeur est laissé vide intentionnellement
+    }
+
+    /**
      * Affiche la boîte de dialogue des règles du Sudoku.
      */
     @Override

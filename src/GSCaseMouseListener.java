@@ -10,6 +10,9 @@ import java.awt.event.MouseListener;
  * @author Marco ORFAO
  */
 public class GSCaseMouseListener implements MouseListener {
+    /*
+     * Case
+     */
     private GSCase casePanel;
 
     /**
@@ -29,7 +32,7 @@ public class GSCaseMouseListener implements MouseListener {
         if (!casePanel.isInitial) {
             casePanel.isActive = true;
             casePanel.setBackground(Color.GREEN);
-            casePanel.parentGrid.testActivity(casePanel.positionX, casePanel.positionY);
+            casePanel.parentGrid.disableAllExcept(casePanel.positionX, casePanel.positionY);
         }
     }
 

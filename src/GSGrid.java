@@ -10,14 +10,39 @@ import javax.swing.border.Border;
  */
 public class GSGrid extends JLabel {
 
+    /**
+     * Taille de la grille de Sudoku.
+     */
     private static final int GRID_SIZE = 9;
 
+    /**
+     * Tableau représentant les données de la grille de Sudoku.
+     */
     private int[][] tableauGrille = new int[GRID_SIZE][GRID_SIZE];
+
+    /**
+     * Tableau bidimensionnel de cases représentant la grille de Sudoku.
+     */
     private GSCase[][] cases = new GSCase[GRID_SIZE][GRID_SIZE];
+
+    /**
+     * Menu associé à la grille de Sudoku.
+     */
     private GSMenu menu;
 
+    /**
+     * Coordonnée X de la case active.
+     */
     private int activeX = 0;
+
+    /**
+     * Coordonnée Y de la case active.
+     */
     private int activeY = 0;
+
+    /**
+     * Indique si le jeu est en cours.
+     */
     private Boolean isPlaying;
 
     /**
@@ -29,7 +54,9 @@ public class GSGrid extends JLabel {
         initializeGrid();
     }
 
-    // Initialise la grille avec des cases vides
+    /**
+     * Initialise la grille avec des cases vides
+     */
     private void initializeGrid() {
         FlowLayout gestionnaire = new FlowLayout();
         this.setLayout(gestionnaire);
@@ -48,7 +75,12 @@ public class GSGrid extends JLabel {
         this.add(gridContainer);
     }
 
-    // Détermine les bordures des cellules de la grille
+    /**
+     * Détermine les bordures des cellules de la grille
+     * @param i L'indice de la ligne
+     * @param j L'indice de la colonne
+     * @return la bordure de la grille
+     */
     private Border determineBorder(int i, int j) {
         int top = (i == 0) ? 5 : 1; 
         int bottom = ((i + 1) % 3 == 0) ? 5 : 1; 
@@ -57,7 +89,11 @@ public class GSGrid extends JLabel {
         return BorderFactory.createMatteBorder(top, left, bottom, right, Color.BLACK); 
     }
 
-    // Applique les bordures aux cellules de la grille
+    /**
+     * Applique les bordures aux cellules de la grille
+     * @param i L'indice de la ligne.
+     * @param j L'indice de la colonne.
+     */
     private void setCellBorder(int i, int j) {
         cases[i][j].setBorder(determineBorder(i, j));
     }
@@ -103,8 +139,12 @@ public class GSGrid extends JLabel {
         return cases[i][j].getValue();
     }
 
-    // Désactive les cases autres que celle indiquée
-    public void testActivity(int x, int y){
+    /**
+     * Désactive les cases autres que celle indiquée
+     * @param x L'indice de ligne.
+     * @param y L'indice de la colonne.
+     */
+    public void disableAllExcept(int x, int y){
         for (int i = 0 ; i < GRID_SIZE ; i++ ) {
             for (int j = 0 ; j < GRID_SIZE ; j++ ) {
                 if (cases[i][j].getActivity() && (i != x || j != y)) {
@@ -116,24 +156,38 @@ public class GSGrid extends JLabel {
         }
     }
 
-    // Retourne l'index X de la case active
+    /**
+     *  Retourne l'index X de la case active
+     * @return l'index X de la case active
+     */
     public int whoIsActive_X() {
         return activeX;
     }
 
-    // Retourne l'index Y de la case active
+    /**
+     * Retourne l'index Y de la case active
+     * @return l'index Y de la case active
+     */
     public int whoIsActive_Y() {
         return activeY;
     }
 
-    // Met à jour la valeur d'une case dans la grille
+    /**
+     * Met à jour la valeur d'une case dans la grille
+     * @param x L'indice de la ligne.
+     * @param y L'indice de la colonne.
+     * @param val La nouvelle valeur à assigner.
+     */
     public void setValuetoCase(int x, int y, int val) {
         if (cases[x][y].getActivity() && getMode()) {
             cases[x][y].updateValue(val);
         }
     }
 
-    // Vérifie si la grille est complète
+    /**
+     * Vérifie si la grille est complète
+     * @return True si la grille est complète, false sinon.
+     */
     public Boolean isComplete(){
         for (int i = 0 ; i < 9 ; i++ ) {
             for (int j = 0 ; j < 9 ; j++ ) {
@@ -145,17 +199,26 @@ public class GSGrid extends JLabel {
         return false;
     }
 
-    // Active ou désactive le mode de jeu
-    public void isPlaying(Boolean _bool) {
-        this.isPlaying = _bool;
+    /**
+     * Active ou désactive le mode de jeu
+     * @param isPlayingOrNot Un booléen indiquant si le mode de jeu est activé ou désactivé.
+     */
+    public void isPlaying(Boolean isPlayingOrNot) {
+        this.isPlaying = isPlayingOrNot;
     }
 
-    // Retourne le mode de jeu
+    /**
+     * Retourne si le jeu est en cours ou non
+     * @return si le jeu est en cours ou non
+     */
     public Boolean getMode() {
         return this.isPlaying;
     }
 
-    // Résout le Sudoku
+    /**
+     * Résout le Sudoku
+     * @return true si le Sudoku est résolu avec succès, sinon false.
+     */
     public boolean solve() {
         for (int row = 0; row < 9; row++) {
             for (int column = 0; column < 9; column++) {

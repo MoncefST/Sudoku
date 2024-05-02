@@ -2,7 +2,6 @@ import java.io.*;
 import javax.swing.*;
 import javax.swing.filechooser.FileNameExtensionFilter;
 
-
 /**
  * Cette classe implémente un gestionnaire d'enregistrement de grille de jeu.
  * Elle permet à l'utilisateur de sauvegarder une grille de jeu dans un fichier spécifié.
@@ -13,9 +12,24 @@ import javax.swing.filechooser.FileNameExtensionFilter;
  */
 public class GMSaver {
 
-    private File selectedFile; // Le fichier sélectionné pour sauvegarde
-    private JFrame parentFrame; // La fenêtre parent
-    private GMGrid grid; // La grille de jeu à sauvegarder
+    /**
+     * Le fichier sélectionné pour sauvegarde
+     */
+    private File selectedFile;
+
+    /**
+     * La fenêtre parent
+     */
+    private JFrame parentFrame;
+
+    /**
+     * La grille de jeu à sauvegarder
+     */
+    private GMGrid grid;
+
+    /**
+     * Le testeur de grille
+     */
     private GMChecker testGrille;
 
     /**
@@ -29,7 +43,11 @@ public class GMSaver {
         this.testGrille = new GMChecker(this.grid);
     }
 
-    public void saveGridIfNeeded() {
+    /**
+     * Vérifie si la grille est valide, puis la sauvegarde si possible.
+     * Si la grille n'est pas valide, affiche un message d'erreur.
+     */
+    public void saveGridIfPossible() {
         if (isValidGrid()) {
             saveGrid();
         } else {

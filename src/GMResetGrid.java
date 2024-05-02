@@ -3,14 +3,12 @@ import java.awt.event.ActionListener;
 
 /**
  * La classe GMResetGrid sert à crée une nouvelle grille de 0.
- *
  * @version 1.0
  * @author Moncef STITI
  * @author Marco ORFAO
  */
 
 public class GMResetGrid implements ActionListener {
-
   /**
    * La grille à réinitialiser.
    */
@@ -42,7 +40,6 @@ public class GMResetGrid implements ActionListener {
     for (int i = 0; i < 9 ; i++) {
       array[i] = 0;
     }
-
     this.myGrid.importGrid(array);
   }
 }

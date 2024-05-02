@@ -8,7 +8,10 @@ import java.awt.event.*;
  * @author Marco ORFAO
  */
 public class GMRules implements ActionListener {
-    private RulesDialogManager rulesDialog; // Gestionnaire de la boîte de dialogue des règles
+    /**
+     * Gestionnaire de la boîte de dialogue des règles
+     */
+    private RulesDialogManager rulesDialog; 
 
     /**
      * Constructeur de GMRules.
