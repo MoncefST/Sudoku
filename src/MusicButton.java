@@ -7,10 +7,26 @@ import javax.swing.*;
  * @author Marco ORFAO
  */
 public class MusicButton extends JButton {
-    private static MusicPlayer currentMusicPlayer;
+/**
+ * Représente le lecteur de musique actuellement en cours de lecture.
+ */
+private static MusicPlayer currentMusicPlayer;
+
+    /**
+     * L'icône à afficher lorsque la musique est activée.
+     */
     private ImageIcon iconOn;
+
+    /**
+     * L'icône à afficher lorsque la musique est désactivée.
+     */
     private ImageIcon iconOff;
+
+    /**
+     * Le lecteur de musique associé à ce bouton.
+     */
     private MusicPlayer musicPlayer;
+
 
     /**
     * Constructeur : Construit un MusicButton.
@@ -32,7 +48,7 @@ public class MusicButton extends JButton {
 
         this.musicPlayer = new MusicPlayer(musicFilePath);
 
-        addActionListener(e -> {
+        this.addActionListener(e -> {
             if (currentMusicPlayer != null && currentMusicPlayer.isPlaying()) {
                 currentMusicPlayer.stop();
                 currentMusicPlayer = null;

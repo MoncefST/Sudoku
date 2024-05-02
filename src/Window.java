@@ -30,7 +30,7 @@ public class Window extends JFrame {
 
     /**
      * Constructeur de la classe Window.
-     * Initialise la fenêtre avec le titre du programme, la taille minimale et la couleur de fond.
+     * Initialise la fenêtre avec la taille minimale et la couleur de fond.
      */
     public Window() {
         super(PROGRAM_TITLE);
@@ -38,14 +38,6 @@ public class Window extends JFrame {
         this.setMinimumSize(MIN_WINDOW_SIZE);
         this.setLocationRelativeTo(null);
         getContentPane().setBackground(BACKGROUND_COLOR);
-    }
-
-    /**
-     * Obtient le titre de la page actuelle.
-     * @return Le titre de la page actuelle.
-     */
-    public String getPageTitle() {
-        return this.PAGE_TITLE;
     }
 
     /**

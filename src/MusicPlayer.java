@@ -9,7 +9,13 @@ import javax.sound.sampled.*;
  */
 
 public class MusicPlayer {
+    /**
+     * Clip utilisé pour jouer la musique
+     */
     private Clip clip;
+    /**
+     * Indique si la musique est en cours de lecture ou non
+     */
     private boolean isPlaying;
 
     /**

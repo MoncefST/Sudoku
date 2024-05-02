@@ -8,14 +8,40 @@ import java.awt.*;
  * @author Marco ORFAO
  */
 public class GSMenu {
+    /**
+     * Fenêtre dans laquelle le menu est affiché
+     */
+    private Window window; 
 
-    private Window window; // Fenêtre dans laquelle le menu est affiché
-    private JPanel titlePanel; // Panneau pour le titre
-    private JPanel buttonPanel; // Panneau pour les boutons
-    private Title titleLabel; // Étiquette pour le titre
-    private Button importerButton; // Bouton pour importer une grille
-    private Button jouerButton; // Bouton pour commencer à jouer
-    private Button autoSolveButton; // Bouton pour résoudre automatiquement la grille
+    /**
+     * Panneau pour le titre
+     */
+    private JPanel titlePanel;
+
+    /**
+     * Panneau pour les boutons
+     */
+    private JPanel buttonPanel;
+
+    /**
+     * Étiquette pour le titre
+     */
+    private Title titleLabel;
+
+    /**
+     * Bouton pour importer une grille
+     */
+    private Button importerButton;
+
+    /**
+     * Bouton pour commencer à jouer
+     */
+    private Button jouerButton;
+
+    /**
+     * Bouton pour résoudre automatiquement la grille
+     */
+    private Button autoSolveButton;
 
     /**
      * Constructeur de la classe GSMenu.
@@ -73,15 +99,26 @@ public class GSMenu {
         this.autoSolveButton.setEnabled(true); // Active le bouton "Résolution automatique"
     }
 
-    // Méthodes getters pour les composants
+    /**
+     * Renvoie le bouton pour l'importation.
+     * @return Le bouton pour l'importation.
+     */
     public Button getImporterButton() {
         return this.importerButton;
     }
 
+    /**
+     * Renvoie le bouton pour démarrer le jeu.
+     * @return Le bouton pour démarrer le jeu.
+     */
     public Button getJouerButton() {
         return this.jouerButton;
     }
-
+    
+    /**
+     * Renvoie le bouton pour résoudre automatiquement la grille.
+     * @return Le bouton pour résoudre automatiquement la grille.
+     */
     public Button getAutoSolveButton() {
         return this.autoSolveButton;
     }

@@ -9,10 +9,25 @@ import java.io.*;
  * @author Marco ORFAO
  */
 public class GSImport {
-
+  
+  /**
+   * Fenêtre précédente
+   */
   private Window previousFrame;
+
+  /**
+   * Indique si le fichier est accessible
+   */
   private boolean accessible;
+
+  /**
+   * Fichier sélectionné pour l'importation
+   */
   private File file;
+
+  /**
+   * Tableau des valeurs importées
+   */
   private int[] importedValues = new int[9];
 
   /**
@@ -69,14 +84,17 @@ public class GSImport {
     }
   }
 
-
+  /**
+  * Permet de savoir si le fichier est accessible
+  * @return le booleen accessible
+  */
   public boolean isAccessible() {
     return accessible;
   }
 
   /**
-  * Gets the array of imported values.
-  * @return the array of imported values
+  * Récupère le tableau des valeurs importées.
+  * @return le tableau des valeurs importées
   */
   public int[] getImportedValues() {
     return importedValues;

@@ -17,7 +17,7 @@ public class GSCase extends JPanel {
 
     private String text = ""; // Texte affiché dans la case
     protected boolean isInitial = false; // Indique si la valeur de la case est initiale
-    protected boolean isActive; // Indique si la case est active
+    protected boolean isActive = true; // Indique si la case est active
     private JLabel label = new JLabel(); // Étiquette pour afficher le texte
     private byte digitCount = 0; // Compteur du nombre de valeurs insérées dans la case
     protected int positionX; // Position X de la case dans la grille

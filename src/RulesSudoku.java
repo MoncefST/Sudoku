@@ -9,8 +9,14 @@ import java.awt.*;
  * @author Marco ORFAO
  */
 public class RulesSudoku extends JPanel {
-    private Dimension FRAME_SIZE = new Dimension(400, 500); // Taille de la fenêtre des règles
-    private Color BACKGROUND_COLOR = new Color(54, 91, 109); // Couleur d'arrière-plan du panneau
+    /**
+     * Taille de la fenêtre des règles
+     */
+    private Dimension FRAME_SIZE = new Dimension(400, 500);
+    /**
+     * Couleur d'arrière-plan du panneau
+     */
+    private Color BACKGROUND_COLOR = new Color(54, 91, 109); 
 
     /**
      * Constructeur par défaut de RulesSudoku.
@@ -21,9 +27,7 @@ public class RulesSudoku extends JPanel {
         this.setLayout(gestionnaireBorderLayout);
         this.setBackground(this.BACKGROUND_COLOR); // Couleur d'arrière-plan du panneau
 
-        JLabel titleLabel = new JLabel("Règles du Sudoku");
-        titleLabel.setFont(new Font("Copperplate", Font.BOLD, 40)); // Police du titre
-        titleLabel.setForeground(Color.WHITE); // Couleur du titre
+        Title titleLabel = new Title("Règles du Sudoku",new Font("Copperplate", Font.BOLD, 40),Color.WHITE);
 
         JTextArea rulesTextArea = new JTextArea();
         rulesTextArea.setText("Les règles du Sudoku :\n\n" +

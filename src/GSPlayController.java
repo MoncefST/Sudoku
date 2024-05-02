@@ -10,6 +10,9 @@ import java.awt.event.KeyListener;
  * @author Marco ORFAO
  */
 public class GSPlayController implements KeyListener, ActionListener {
+    /**
+     * Le jeu de la grille
+     */
     private GSPlay gsPlay;
 
     /**
@@ -56,6 +59,7 @@ public class GSPlayController implements KeyListener, ActionListener {
      */
     @Override
     public void keyReleased(KeyEvent e) {
+        // Non utilisé
     }
 
     /**

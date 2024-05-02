@@ -1,14 +1,16 @@
 import javax.swing.*;
 
 /**
- * La classe GMChecker est utilisée pour vérifier la cohérence de la grille.
+ * GMChecker est utilisée pour vérifier la cohérence de la grille.
  * Elle vérifie si les lignes, les colonnes et les régions de la grille respectent les règles du jeu.
  * @version 1.0
  * @author Moncef STITI
  * @author Marco ORFAO
  */
 public class GMChecker {
-
+    /**
+     * La grille
+     */
     private GMGrid grid;
 
     /**

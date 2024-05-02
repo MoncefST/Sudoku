@@ -5,8 +5,10 @@
  * @author Marco ORFAO
  */
 public class GSTest {
-
-  private GSGrid ma_Grille;
+    /**
+     * La grille
+     */
+    private GSGrid ma_Grille;
 
   /**
    * Constructeur de la classe GSTest.

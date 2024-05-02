@@ -8,9 +8,20 @@ import java.awt.event.ActionListener;
  * @author Marco ORFAO
  */
 public class GSMenuController implements ActionListener {
-    private GSMenu gsMenu; // Menu Sudoku
-    private Window mainWindow; // Fenêtre principale
-    private GSGrid sudokuGrid; // Grille de Sudoku
+    /**
+     * Menu Sudoku
+     */
+    private GSMenu gsMenu;
+
+    /**
+     * Fenêtre principale
+     */
+    private Window mainWindow;
+
+    /**
+     * Grille de Sudoku
+     */
+    private GSGrid sudokuGrid;
 
     /**
      * Constructeur de la classe GSMenuController.

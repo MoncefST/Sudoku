@@ -9,26 +9,61 @@ import java.awt.event.*;
  */
 public class GSPlay {
 
-    // Valeur représentant une case vide
+    /**
+     * Valeur représentant une case vide
+     */
     private static final int EMPTY_VALUE = 0;
     
-    // Codes des touches numériques du pavé numérique
+    /**
+     * Codes des touches numériques du pavé numérique
+     */
     private static final int[] NUM_KEYS = {KeyEvent.VK_NUMPAD1, KeyEvent.VK_NUMPAD2, KeyEvent.VK_NUMPAD3, KeyEvent.VK_NUMPAD4, KeyEvent.VK_NUMPAD5,
             KeyEvent.VK_NUMPAD6, KeyEvent.VK_NUMPAD7, KeyEvent.VK_NUMPAD8, KeyEvent.VK_NUMPAD9};
     
-    // Codes des touches numériques du clavier
+    /**
+    * Codes des touches numériques du clavier
+    */
     private static final int[] KEY_NUMBERS = {KeyEvent.VK_1, KeyEvent.VK_2, KeyEvent.VK_3, KeyEvent.VK_4, KeyEvent.VK_5,
             KeyEvent.VK_6, KeyEvent.VK_7, KeyEvent.VK_8, KeyEvent.VK_9};
     
-    // Code de la touche de suppression
+    /**
+     * Code de la touche de suppression
+     */ 
     private static final int DELETE_KEY = KeyEvent.VK_BACK_SPACE;
 
+    /**
+     * Container pour le contenu de la fenêtre
+     */
     private Container content;
+
+    /**
+     * Grille de Sudoku
+     */
     private GSGrid ma_Grille;
-    private Button boutonValider = new Button("Valider",Color.lightGray);
+
+    /**
+     * Bouton "Valider" pour valider la grille
+     */
+    private Button boutonValider;
+
+    /**
+     * Temps de démarrage du jeu
+     */
     private long startTime;
+
+    /**
+     * Temps écoulé depuis le démarrage du jeu
+     */
     private long vraiTime;
+
+    /**
+     * Fenêtre de jeu
+     */
     private Window gameplay;
+
+    /**
+     * Contrôleur pour gérer les événements de jeu
+     */
     private GSPlayController gsPlayController;
 
     /**
@@ -40,6 +75,7 @@ public class GSPlay {
         this.ma_Grille = grille;
         this.gameplay = window;
         this.gsPlayController = new GSPlayController(this);
+        this.boutonValider = new Button("Valider",Color.lightGray);
     }
 
     /**
@@ -98,7 +134,7 @@ public class GSPlay {
     }
 
     /**
-    * Méthode pour obtenir la grille
+    * Méthode pour obtenir la grille jouer
     * @return la grille
     */
     public GSGrid getMaGrille() {

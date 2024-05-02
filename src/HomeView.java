@@ -1,5 +1,7 @@
 import javax.swing.*;
 import java.awt.*;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * HomeView représente la vue de la page d'accueil de l'application Sudoku.
@@ -10,7 +12,7 @@ import java.awt.*;
  * @author Moncef STITI
  * @author Marco ORFAO
  */
-public class GMHomeView extends JPanel {
+public class HomeView extends JPanel {
 
     // Constantes pour les chemins des icônes et des fichiers audio, ainsi que pour les dimensions et les couleurs
     private final String AUDIO_ON = "img/iconeAudio.png";
@@ -22,27 +24,31 @@ public class GMHomeView extends JPanel {
     private final Font TITLE_FONT = new Font("Copperplate", Font.BOLD, 75);
     private final Font SUBTITLE_FONT = new Font("Copperplate", Font.PLAIN, 24);
     private final Font BUTTON_FONT = new Font("Copperplate", Font.BOLD, 24);
-    private final String[] BUTTON_TEXTS = {"Générer une grille", "Règles", "Quitter"};
 
-    // Tableau de titres pour le titre principal et le sous-titre
-    private final Title[] labels = {
-            new Title("Sudoku Grid Creator", TITLE_FONT, TITLE_TEXT_COLOR),
-            new Title("Par Moncef & Marco", SUBTITLE_FONT, TITLE_TEXT_COLOR)
-    };
-
+    private final String[] BUTTON_TEXTS; // Textes des boutons
+    private final Title[] labels; // Tableau de titres pour le titre principal et le sous-titre
     private MusicButton musicButton; // Bouton pour contrôler la musique
     private final Window window; // Fenêtre parente
     private JPanel titlePanel; // Panneau pour le titre
     private JPanel buttonPanel; // Panneau pour les boutons
     private JLabel imageLabel; // Étiquette pour l'image
+    private List<Button> buttonsList; // Liste des boutons créés
 
     /**
      * Constructeur de la classe HomeView.
      * Initialise la fenêtre parente et crée les composants de la page d'accueil.
-     * @param window La fenêtre parente.
+     *
+     * @param window     La fenêtre parente.
+     * @param mainTitle  Le titre principal de la page.
+     * @param subTitle   Le sous-titre de la page.
+     * @param buttonTexts Les textes des boutons.
      */
-    public GMHomeView(Window window) {
+    public HomeView(Window window, String mainTitle, String subTitle, String[] buttonTexts) {
         this.window = window;
+        this.BUTTON_TEXTS = buttonTexts;
+        this.labels = new Title[]{new Title(mainTitle, TITLE_FONT, TITLE_TEXT_COLOR),
+                new Title(subTitle, SUBTITLE_FONT, TITLE_TEXT_COLOR)};
+        buttonsList = new ArrayList<>();
         createComponents();
         addComponentsToWindow();
     }
@@ -70,11 +76,12 @@ public class GMHomeView extends JPanel {
         buttonPanel.setLayout(buttonLayout);
         buttonPanel.setBorder(BorderFactory.createEmptyBorder(20, 20, 20, 20));
         buttonPanel.setBackground(BACKGROUND_COLOR);
-        GMHomeButtonClickListener listenerButton = new GMHomeButtonClickListener(window);
+        HomeButtonClickListener listenerButton = new HomeButtonClickListener(window);
         for (String text : BUTTON_TEXTS) {
             Button button = new Button(text, BUTTON_SIZE, BUTTON_FONT, Color.white);
             button.addActionListener(listenerButton);
             buttonPanel.add(button);
+            buttonsList.add(button); // Ajout du bouton à la liste
         }
 
         musicButton = new MusicButton(AUDIO_ON, AUDIO_OFF, MUSIC_FILE); // Bouton pour contrôler la musique
@@ -99,5 +106,32 @@ public class GMHomeView extends JPanel {
 
         window.pack(); // Ajuste la taille de la fenêtre pour s'adapter à son contenu
         window.setVisible(true); // Rend la fenêtre visible
+    }
+
+    /**
+     * Récupère le premier bouton créé.
+     *
+     * @return Le premier bouton.
+     */
+    public Button getFirstButton() {
+        return buttonsList.get(0);
+    }
+
+    /**
+     * Récupère le deuxième bouton créé.
+     *
+     * @return Le deuxième bouton.
+     */
+    public Button getSecondButton() {
+        return buttonsList.get(1);
+    }
+
+    /**
+     * Récupère le troisième bouton créé.
+     *
+     * @return Le troisième bouton.
+     */
+    public Button getThirdButton() {
+        return buttonsList.get(2);
     }
 }

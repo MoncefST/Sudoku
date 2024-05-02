@@ -1,12 +1,14 @@
 /**
- * La classe GSWin gère l'affichage d'une fenêtre de félicitations pour avoir résolu le Sudoku.
+ * GSWin gère l'affichage d'une fenêtre de félicitations pour avoir résolu le Sudoku.
  * @version 1.0
  * @author Moncef STITI
  * @author Marco ORFAO
  */
 public class GSWin implements DialogManager {
-
-    private long solvingTime; // Temps de résolution du Sudoku
+    /**
+     * Temps de résolution du Sudoku
+     */
+    private long solvingTime;
 
     /**
      * Constructeur de la classe GSWin.

@@ -8,11 +8,25 @@ import java.awt.*;
  * @author Marco ORFAO
  */
 public class GSSolver {
+    /**
+     * Grille de Sudoku à résoudre
+     */
+    private GSGrid grid;
 
-    private GSGrid grid; // Grille de Sudoku à résoudre
-    private Window window; // Fenêtre dans laquelle afficher la résolution
-    private JLabel label = new JLabel("Resolution en cours..."); // Étiquette pour afficher le statut de la résolution
-    private long startTime; // Temps de début de la résolution
+    /**
+     * Fenêtre dans laquelle afficher la résolution
+     */
+    private Window window;
+
+    /**
+     * Étiquette pour afficher le statut de la résolution
+     */
+    private JLabel label = new JLabel("Resolution en cours...");
+
+    /**
+     * Temps de début de la résolution
+     */
+    private long startTime;
 
     /**
      * Constructeur de la classe GSSolver.
