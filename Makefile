@@ -14,14 +14,14 @@ JVMFLAGS =
 ${OUTDIR}/GridMaker.class : ${SRCDIR}/GridMaker.java ${OUTDIR}/Window.class ${OUTDIR}/HomeView.class
     ${JC} ${JCFLAGS} ${SRCDIR}/GridMaker.java -d $(OUTDIR)
 
+${OUTDIR}/GridSolver.class : ${SRCDIR}/GridSolver.java ${OUTDIR}/Window.class ${OUTDIR}/HomeView.class
+    ${JC} ${JCFLAGS} ${SRCDIR}/GridSolver.java -d $(OUTDIR)
+
 ${OUTDIR}/Window.class : ${SRCDIR}/Window.java
 	${JC} ${JCFLAGS} ${SRCDIR}/Window.java -d $(OUTDIR)
 
 ${OUTDIR}/Title.class : ${SRCDIR}/Title.java
 	${JC} ${JCFLAGS} ${SRCDIR}/Title.java -d $(OUTDIR)
-
-${OUTDIR}/GridSolver.class : ${SRCDIR}/GridSolver.java ${OUTDIR}/Window.class ${OUTDIR}/HomeView.class
-    ${JC} ${JCFLAGS} ${SRCDIR}/GridSolver.java -d $(OUTDIR)
 
 ${OUTDIR}/Button.class : ${SRCDIR}/Button.java
 	${JC} ${JCFLAGS} ${SRCDIR}/Button.java -d $(OUTDIR)
@@ -89,7 +89,7 @@ ${OUTDIR}/GSGrid.class : ${SRCDIR}/GSGrid.java ${OUTDIR}/GSCase.class ${OUTDIR}/
 ${OUTDIR}/GSImport.class : ${SRCDIR}/GSImport.java ${OUTDIR}/Window.class
 	${JC} ${JCFLAGS} ${SRCDIR}/GSImport.java -d $(OUTDIR)
 
-${OUTDIR}/GSMenu.class : ${SRCDIR}/GSMenu.java ${OUTDIR}/Title.class ${OUTDIR}/Window.class ${OUTDIR}/Button.class
+${OUTDIR}/GSMenu.class : ${SRCDIR}/GSMenu.java ${OUTDIR}/Title.class ${OUTDIR}/Button.class ${OUTDIR}/Window.class
 	${JC} ${JCFLAGS} ${SRCDIR}/GSMenu.java -d $(OUTDIR)
 
 ${OUTDIR}/GSMenuController.class : ${SRCDIR}/GSMenuController.java ${OUTDIR}/GSMenu.class ${OUTDIR}/Window.class ${OUTDIR}/GSGrid.class ${OUTDIR}/GSMenu.class ${OUTDIR}/GSImport.class ${OUTDIR}/GSPlay.class ${OUTDIR}/GSPlayController.class ${OUTDIR}/GSSolver.class
@@ -116,11 +116,11 @@ ${OUTDIR}/HomeButtonClickListener.class : ${SRCDIR}/HomeButtonClickListener.java
 ${OUTDIR}/HomeView.class : ${SRCDIR}/HomeView.java ${OUTDIR}/MusicButton.class ${OUTDIR}/Window.class ${OUTDIR}/Title.class ${OUTDIR}/HomeButtonClickListener.class ${OUTDIR}/Button.class
 	${JC} ${JCFLAGS} ${SRCDIR}/HomeView.java -d $(OUTDIR)
 
-${OUTDIR}/MusicPlayer.class : ${SRCDIR}/MusicPlayer.java ${SRCDIR}/MusicPlayer.java
-	${JC} ${JCFLAGS} ${SRCDIR}/MusicPlayer.java -d $(OUTDIR)
+${OUTDIR}/MusicPlayer.class : ${SRCDIR}/MusicPlayer.java
+    ${JC} ${JCFLAGS} ${SRCDIR}/MusicPlayer.java -d $(OUTDIR)
 
 ${OUTDIR}/MusicButton.class : ${SRCDIR}/MusicButton.java ${OUTDIR}/MusicPlayer.class
-	${JC} ${JCFLAGS} ${SRCDIR}/MusicButton.java -d $(OUTDIR)
+    ${JC} ${JCFLAGS} ${SRCDIR}/MusicButton.java -d $(OUTDIR)
 
 ${OUTDIR}/RulesDialogManager.class : ${SRCDIR}/RulesDialogManager.java ${OUTDIR}/RulesSudoku.class
 	${JC} ${JCFLAGS} ${SRCDIR}/RulesDialogManager.java -d $(OUTDIR)
@@ -129,8 +129,8 @@ ${OUTDIR}/RulesSudoku.class : ${SRCDIR}/RulesSudoku.java ${OUTDIR}/Title.class
 	${JC} ${JCFLAGS} ${SRCDIR}/RulesSudoku.java -d $(OUTDIR)
 
 
-
 ### REGLES OPTIONNELLES ###
+
 GridMaker : $(OFILES)
 	${JVM} ${JVMFLAGS} -cp $(OUTDIR) GridMaker
 

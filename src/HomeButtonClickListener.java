@@ -35,7 +35,7 @@ import java.awt.event.ActionListener;
                     GSMenu menuJeu = new GSMenu(this.window);
                     GSMenuController menuController = new GSMenuController(menuJeu, this.window);
                     break;
-                case "Générer une grille":
+                case "Créer une grille":
                     Window.removeAllComponents(this.window);
                     GMUserInterfaceView vueCreationGrille = new GMUserInterfaceView(this.window);
                     break;
