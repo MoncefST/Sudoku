@@ -72,7 +72,7 @@ public class GMCaseKeyListener implements KeyListener {
                 gridMakerCase.setCellValue(previousValue);
                 JOptionPane.showMessageDialog(null, "La valeur ne respecte pas les règles du Sudoku.", "Erreur", JOptionPane.ERROR_MESSAGE);
             }
-        } else {
+        } else if (!e.isShiftDown()){
             // Afficher un message d'erreur si la touche enfoncée n'est pas valide
             JOptionPane.showMessageDialog(null, "Veuillez entrer un chiffre entre 1 et 9.", "Erreur", JOptionPane.ERROR_MESSAGE);
         }
