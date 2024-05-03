@@ -43,7 +43,6 @@ public class GMUserInterfaceView  {
 
     // Création des menus
     JMenu menuFichier = createMenu("Fichier");
-    JMenu menuGrille = createMenu("Grille");
     JMenu menuAide = createMenu("Aide");
 
     // Ajout des éléments de menu
@@ -72,7 +71,6 @@ public class GMUserInterfaceView  {
     menuAide.add(reglesSudokuItem);
 
     menuBar.add(menuFichier);
-    menuBar.add(menuGrille);
     menuBar.add(menuAide);
 
     window.add(menuBar, BorderLayout.NORTH);
