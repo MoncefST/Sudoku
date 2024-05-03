@@ -1,23 +1,23 @@
 import java.awt.event.*;
 
 /**
- * GMRules gère les actions liées aux règles du jeu.
+ * Rules gère les actions liées aux règles du jeu.
  * Cette classe implémente ActionListener pour réagir aux clics sur un bouton.
  * @version 1.0
  * @author Moncef STITI
  * @author Marco ORFAO
  */
-public class GMRules implements ActionListener {
+public class Rules implements ActionListener {
     /**
      * Gestionnaire de la boîte de dialogue des règles
      */
     private RulesDialogManager rulesDialog; 
 
     /**
-     * Constructeur de GMRules.
+     * Constructeur de Rules.
      * Initialise le gestionnaire de boîte de dialogue des règles.
      */
-    public GMRules(){
+    public Rules(){
         this.rulesDialog = new RulesDialogManager();
     }
 

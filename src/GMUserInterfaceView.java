@@ -51,7 +51,7 @@ public class GMUserInterfaceView  {
     JMenuItem chargerItem = createMenuItem("Charger", new GMImport(window, grid));
     JMenuItem sauvegarderItem = createMenuItem("Sauvegarder", new GMSaverActionListener(window, grid));
     JMenuItem aideGrilleItem = createMenuItem("Comment créer une grille", new GMHowToCreateController());
-    JMenuItem reglesSudokuItem = createMenuItem("Règles du Sudoku", new GMRules());
+    JMenuItem reglesSudokuItem = createMenuItem("Règles du Sudoku", new Rules());
 
 
     // Ajout du menu "Jouer"
