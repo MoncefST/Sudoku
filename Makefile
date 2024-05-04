@@ -32,6 +32,9 @@ GSMenuController.class : ${SRCDIR}/GSMenuController.java GSMenu.class Window.cla
 GSGrid.class GSCase.class GSCaseMouseListener.class : ${SRCDIR}/GSGrid.java GSMenu.class
 	${JC} ${JCFLAGS} -cp $(SRCDIR) ${SRCDIR}/GSGrid.java ${SRCDIR}/GSCase.java ${SRCDIR}/GSCaseMouseListener.java -d $(OUTDIR)
 
+GSPlay.class GSPlayController.class : ${SRCDIR}/GSPlay.java GSGrid.class Button.class Window.class
+	${JC} ${JCFLAGS} -cp $(SRCDIR) ${SRCDIR}/GSPlay.java ${SRCDIR}/GSPlayController.java -d $(OUTDIR)
+
 GSSolver.class : ${SRCDIR}/GSSolver.java GSGrid.class Window.class
 	${JC} ${JCFLAGS} -cp $(SRCDIR) ${SRCDIR}/GSSolver.java -d $(OUTDIR)
 
