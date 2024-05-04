@@ -1,119 +1,30 @@
-
 JC := javac
 JCFLAGS := -encoding UTF-8 -implicit:none
 JVM := java
 JVMFLAGS :=
+
 SRCDIR := ./src
 OUTDIR := ./build
 DOCDIR := ./doc
 SRC := $(wildcard $(SRCDIR)/*.java)
-OFILES := $(wildcard $(OUTDIR)/*.class)
+OFILES := $(SRC:$(SRCDIR)/%.java=$(OUTDIR)/%.class)
 
 ### REGLES ESSENTIELLES ###
 
-GridSolver.class : ${SRCDIR}/GridSolver.java Window.class HomeView.class
-	${JC} ${JCFLAGS} -cp $(SRCDIR) ${SRCDIR}/GridSolver.java -d $(OUTDIR)
+$(OUTDIR)/%.class : $(SRCDIR)/%.java
+	@mkdir -p $(@D)
+	${JC} ${JCFLAGS} -cp $(SRCDIR) -d $(OUTDIR) $<
 
-GMChecker.class : ${SRCDIR}/GMChecker.java GMGrid.class
-	${JC} ${JCFLAGS} -cp $(SRCDIR) ${SRCDIR}/GMChecker.java -d $(OUTDIR)
-
-GMHowToCreateView.class : ${SRCDIR}/GMHowToCreateView.java
-	${JC} ${JCFLAGS} -cp $(SRCDIR) ${SRCDIR}/GMHowToCreateView.java -d $(OUTDIR)
-
-HomeView.class HomeButtonClickListener.class : ${SRCDIR}/HomeView.java ${SRCDIR}/HomeButtonClickListener.java MusicButton.class Window.class Title.class Button.class DialogManager.class GMUserInterfaceView.class GSMenu.class GSMenuController.class
-	${JC} ${JCFLAGS} -cp $(SRCDIR) ${SRCDIR}/HomeView.java ${SRCDIR}/HomeButtonClickListener.java -d $(OUTDIR)
-
-GSMenu.class : ${SRCDIR}/GSMenu.java Window.class Title.class Button.class
-	${JC} ${JCFLAGS} -cp $(SRCDIR) ${SRCDIR}/GSMenu.java -d $(OUTDIR)
-
-GSMenuController.class : ${SRCDIR}/GSMenuController.java GSMenu.class Window.class GSGrid.class GSPlay.class GSPlayController.class GSSolver.class
-	${JC} ${JCFLAGS} -cp $(SRCDIR) ${SRCDIR}/GSMenuController.java -d $(OUTDIR)
-
-GSGrid.class GSCase.class GSCaseMouseListener.class : ${SRCDIR}/GSGrid.java GSMenu.class
-	${JC} ${JCFLAGS} -cp $(SRCDIR) ${SRCDIR}/GSGrid.java ${SRCDIR}/GSCase.java ${SRCDIR}/GSCaseMouseListener.java -d $(OUTDIR)
-
-GSPlay.class GSPlayController.class : ${SRCDIR}/GSPlay.java GSGrid.class Button.class Window.class
-	${JC} ${JCFLAGS} -cp $(SRCDIR) ${SRCDIR}/GSPlay.java ${SRCDIR}/GSPlayController.java -d $(OUTDIR)
-
-GSSolver.class : ${SRCDIR}/GSSolver.java GSGrid.class Window.class
-	${JC} ${JCFLAGS} -cp $(SRCDIR) ${SRCDIR}/GSSolver.java -d $(OUTDIR)
-
-MusicButton.class : ${SRCDIR}/MusicButton.java MusicPlayer.class
-	${JC} ${JCFLAGS} -cp $(SRCDIR) ${SRCDIR}/MusicButton.java -d $(OUTDIR)
-
-MusicPlayer.class : ${SRCDIR}/MusicPlayer.java
-	${JC} ${JCFLAGS} -cp $(SRCDIR) ${SRCDIR}/MusicPlayer.java -d $(OUTDIR)
-
-Rules.class : ${SRCDIR}/Rules.java RulesDialogManager.class
-	${JC} ${JCFLAGS} -cp $(SRCDIR) ${SRCDIR}/Rules.java -d $(OUTDIR)
-
-RulesDialogManager.class : ${SRCDIR}/RulesDialogManager.java DialogManager.class
-	${JC} ${JCFLAGS} -cp $(SRCDIR) ${SRCDIR}/RulesDialogManager.java -d $(OUTDIR)
-
-DialogManager.class : ${SRCDIR}/DialogManager.java
-	${JC} ${JCFLAGS} -cp $(SRCDIR) ${SRCDIR}/DialogManager.java -d $(OUTDIR)
-
-RulesSudoku.class : ${SRCDIR}/RulesSudoku.java
-	${JC} ${JCFLAGS} -cp $(SRCDIR) ${SRCDIR}/RulesSudoku.java -d $(OUTDIR)
-
-Window.class : ${SRCDIR}/Window.java
-	${JC} ${JCFLAGS} -cp $(SRCDIR) ${SRCDIR}/Window.java -d $(OUTDIR)
-
-Title.class : ${SRCDIR}/Title.java
-	${JC} ${JCFLAGS} -cp $(SRCDIR) ${SRCDIR}/Title.java -d $(OUTDIR)
-
-Button.class : ${SRCDIR}/Button.java
-	${JC} ${JCFLAGS} -cp $(SRCDIR) ${SRCDIR}/Button.java -d $(OUTDIR)
-
-GMUserInterfaceView.class : ${SRCDIR}/GMUserInterfaceView.java GMGrid.class GMResetGrid.class GMImport.class GMSaverActionListener.class GMHowToCreateController.class Rules.class GMUserInterfaceController.class
-	${JC} ${JFCLAGS} -cp $(SRCDIR) ${SRCDIR}/GMUserInterfaceView.java -d $(OUTDIR)
-
-GMGrid.class : ${SRCDIR}/GMGrid.java GMCase.class
-	${JC} ${JFCLAGS} -cp $(SRCDIR) ${SRCDIR}/GMGrid.java -d $(OUTDIR)
-
-GMCase.class GMCaseKeyListener.class GMCaseMouseListener.class : ${SRCDIR}/GMCase.java ${SRCDIR}/GMCaseKeyListener.java ${SRCDIR}/GMCaseMouseListener.java
-	${JC} ${JFCLAGS} -cp $(SRCDIR) ${SRCDIR}/GMCase.java ${SRCDIR}/GMCaseKeyListener.java ${SRCDIR}/GMCaseMouseListener.java -d $(OUTDIR)
-
-GMResetGrid.class : ${SRCDIR}/GMResetGrid.java GMGrid.class
-	${JC} ${JFCLAGS} -cp $(SRCDIR) ${SRCDIR}/GMResetGrid.java -d $(OUTDIR)
-
-GMImport.class : ${SRCDIR}/GMImport.java GMGrid.class
-	${JC} ${JFCLAGS} -cp $(SRCDIR) ${SRCDIR}/GMImport.java -d $(OUTDIR)
-
-GMSaverActionListener.class GMSaver.class : ${SRCDIR}/GMSaverActionListener.java ${SRCDIR}/GMSaver.java GMGrid.class
-	${JC} ${JFCLAGS} -cp $(SRCDIR) ${SRCDIR}/GMSaverActionListener.java ${SRCDIR}/GMSaver.java -d $(OUTDIR)
-
-GMHowToCreateController.class : ${SRCDIR}/GMHowToCreateController.java GMHowToCreateDialogManager.class
-	${JC} ${JFCLAGS} -cp $(SRCDIR) ${SRCDIR}/GMHowToCreateController.java -d $(OUTDIR)
-
-GMHowToCreateDialogManager.class : ${SRCDIR}/GMHowToCreateDialogManager.java DialogManager.class
-	${JC} ${JFCLAGS} -cp $(SRCDIR) ${SRCDIR}/GMHowToCreateDialogManager.java -d $(OUTDIR)
-
-GMUserInterfaceController.class : ${SRCDIR}/GMUserInterfaceController.java Window.class
-	${JC} ${JFCLAGS} -cp $(SRCDIR) ${SRCDIR}/GMUserInterfaceController.java -d $(OUTDIR)
-
-GridMaker.class : ${SRCDIR}/GridMaker.java Window.class HomeView.class
-	${JC} ${JCFLAGS} -cp $(SRCDIR) ${SRCDIR}/GridMaker.java -d $(OUTDIR)
-
-GSWin.class : ${SRCDIR}/GSWin.java DialogManager.class CongratulationsDialog.class
-	${JC} ${JCFLAGS} -cp $(SRCDIR) ${SRCDIR}/GSWin.java -d $(OUTDIR)
-
-CongratulationsDialog.class : ${SRCDIR}/CongratulationsDialog.java
-	${JC} ${JCFLAGS} -cp $(SRCDIR) ${SRCDIR}/CongratulationsDialog.java -d $(OUTDIR)
-
-GSTest.class : ${SRCDIR}/GSTest.java GSGrid.class
-	${JC} ${JCFLAGS} -cp $(SRCDIR) ${SRCDIR}/GSTest.java -d $(OUTDIR)
-
-GSImport.class : ${SRCDIR}/GSImport.java Window.class
-	${JC} ${JCFLAGS} -cp $(SRCDIR) ${SRCDIR}/GSImport.java -d $(OUTDIR)
 
 ### REGLES OPTIONNELLES ###
 
-GridMaker : Window.class Title.class RulesSudoku.class RulesDialogManager.class Rules.class MusicPlayer.class MusicButton.class HomeView.class HomeButtonClickListener.class GridMaker.class GMUserInterfaceView.class GMUserInterfaceController.class GMSaverActionListener.class GMSaver.class GMResetGrid.class GMImport.class GMHowToCreateView.class GMHowToCreateDialogManager.class GMHowToCreateController.class GMGrid.class GMChecker.class GMCaseMouseListener.class GMCaseKeyListener.class GMCase.class DialogManager.class Button.class
-	${JVM} ${JVMFLAGS} -cp $(OUTDIR) GridMaker
+all: 
 
-GridSolver : Window.class Title.class RulesSudoku.class RulesDialogManager.class Rules.class MusicPlayer.class MusicButton.class HomeView.class HomeButtonClickListener.class GSWin.class GSTest.class GSSolver.class GSPlayController.class GSPlay.class GSMenuController.class GSMenu.class GSImport.class GSGrid.class GSCaseMouseListener.class GSCase.class GridSolver.class DialogManager.class CongratulationsDialog.class Button.class
-	${JVM} ${JVMFLAGS} -cp $(OUTDIR) GridSolver
+GridMaker : $(OFILES)
+	${JVM} ${JVMFLAGS} -cp $(OUTDIR) GridMaker $(RUN_ARGS)
+
+GridSolver : $(OFILES)
+	${JVM} ${JVMFLAGS} -cp $(OUTDIR) GridSolver $(RUN_ARGS)
 
 clean :
 	-rm -rf $(OUTDIR)
@@ -122,10 +33,8 @@ clean :
 doc :
 	javadoc -d $(DOCDIR) $(SRC)
 
-default:
-
 ### BUTS FACTICES ###
 
-.PHONY : run clean doc
+.PHONY: all GridMaker GridSolver clean doc
 
 ### FIN ###
