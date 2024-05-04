@@ -20,7 +20,7 @@ public class GMSaver {
     /**
      * La fenêtre parent
      */
-    private JFrame parentFrame;
+    private Window parentFrame;
 
     /**
      * La grille de jeu à sauvegarder
@@ -37,7 +37,7 @@ public class GMSaver {
      * @param parentFrame La fenêtre parent.
      * @param grid La grille de jeu à sauvegarder.
      */
-    public GMSaver(JFrame parentFrame, GMGrid grid) {
+    public GMSaver(Window parentFrame, GMGrid grid) {
         this.parentFrame = parentFrame;
         this.grid = grid;
         this.testGrille = new GMChecker(this.grid);
