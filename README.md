@@ -41,4 +41,4 @@ make doc
 ```
 
 ## Crédits 🚀
- -   Programme réalisé par Moncef STITI (@stiti) et Marco ORFAO (@orfao)
+ -   Programme réalisé par Moncef STITI (@stiti)
