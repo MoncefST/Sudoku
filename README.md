@@ -42,3 +42,6 @@ make doc
 
 ## Crédits 🚀
  -   Programme réalisé par Moncef STITI (@stiti)
+
+## Note obtenue
+- 19,50/20
